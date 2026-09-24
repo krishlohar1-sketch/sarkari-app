@@ -1,10 +1,19 @@
 {
-  "name": "Krish App V6 – Citizen Services",
-  "short_name": "Krish App",
+  "name": "Krish App V8 – Sarkari Services",
+  "short_name": "Krish V8",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#f3f7fc",
-  "theme_color": "#0759c9",
-  "description": "Sarkari Yojana & Citizen Services",
-  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+  "orientation": "portrait",
+  "background_color": "#f4f7fb",
+  "theme_color": "#073b7a",
+  "description": "Sarkari Yojana, Government Websites & Citizen Services",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
