@@ -1,598 +1,165 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Krish App – Government Schemes & Citizen Services</title>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0759c9">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Krish App V6 – Citizen Services</title>
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-body{
-    font-family:Arial, sans-serif;
-    background:#f4f7fb;
-    color:#172033;
-}
-
-header{
-    background:linear-gradient(135deg,#075e54,#087f5b);
-    color:white;
-    padding:18px 15px;
-    text-align:center;
-    box-shadow:0 3px 10px rgba(0,0,0,.15);
-}
-
-.logo{
-    font-size:30px;
-    font-weight:bold;
-}
-
-.tagline{
-    font-size:13px;
-    margin-top:5px;
-    opacity:.95;
-}
-
-.container{
-    max-width:1000px;
-    margin:auto;
-    padding:15px;
-}
-
-.search-box{
-    margin-top:10px;
-}
-
-.search-box input{
-    width:100%;
-    padding:14px 16px;
-    border:none;
-    border-radius:12px;
-    font-size:15px;
-    box-shadow:0 2px 10px rgba(0,0,0,.10);
-    outline:none;
-}
-
-.section-title{
-    margin:22px 0 12px;
-    font-size:21px;
-    font-weight:bold;
-}
-
-.categories{
-    display:flex;
-    gap:8px;
-    overflow-x:auto;
-    padding-bottom:5px;
-}
-
-.categories button{
-    border:none;
-    background:white;
-    padding:10px 15px;
-    border-radius:20px;
-    white-space:nowrap;
-    box-shadow:0 2px 7px rgba(0,0,0,.08);
-    font-size:13px;
-    cursor:pointer;
-}
-
-.categories button:hover{
-    background:#087f5b;
-    color:white;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:13px;
-}
-
-.card{
-    background:white;
-    border-radius:15px;
-    padding:17px;
-    box-shadow:0 3px 12px rgba(0,0,0,.09);
-    transition:.2s;
-}
-
-.card:hover{
-    transform:translateY(-3px);
-}
-
-.icon{
-    font-size:31px;
-    margin-bottom:8px;
-}
-
-.card h3{
-    font-size:17px;
-    margin-bottom:7px;
-}
-
-.card p{
-    font-size:13px;
-    color:#667085;
-    line-height:1.45;
-    margin-bottom:12px;
-}
-
-.card a{
-    display:inline-block;
-    background:#087f5b;
-    color:white;
-    text-decoration:none;
-    padding:9px 13px;
-    border-radius:8px;
-    font-size:13px;
-}
-
-.notice{
-    background:#fff8df;
-    border-left:5px solid #f0ad00;
-    padding:14px;
-    border-radius:10px;
-    margin-top:20px;
-    font-size:13px;
-    line-height:1.5;
-}
-
-footer{
-    margin-top:30px;
-    background:#172033;
-    color:white;
-    text-align:center;
-    padding:22px 15px;
-    font-size:13px;
-}
-
-.footer-logo{
-    font-size:22px;
-    font-weight:bold;
-    margin-bottom:6px;
-}
-
-.no-result{
-    display:none;
-    text-align:center;
-    padding:25px;
-    color:#777;
-}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans Devanagari",sans-serif;background:#f3f7fc;color:#182235}
+header{background:linear-gradient(135deg,#0759c9,#0789d8,#0ca56b);color:#fff;padding:20px 15px 18px;border-radius:0 0 26px 26px;box-shadow:0 5px 18px #0002}
+.brand{display:flex;align-items:center;gap:11px}.appLogo{width:48px;height:48px;border-radius:15px;background:#fff;display:grid;place-items:center;overflow:hidden;box-shadow:0 2px 8px #0002}.appLogo img{width:100%;height:100%;display:block}.brand h1{margin:0;font-size:23px}.brand p{margin:3px 0 0;font-size:12px;opacity:.92}
+.search{margin-top:16px;background:#fff;border-radius:15px;display:flex;align-items:center;padding:0 12px;color:#617087}.search input{width:100%;border:0;outline:0;padding:14px 9px;background:transparent;color:#222}
+main{max-width:950px;margin:auto;padding:15px}.heading{display:flex;justify-content:space-between;align-items:center}.heading h2{font-size:18px;margin:5px 0 12px}.small{font-size:11px;color:#728096}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:18px}.quick button{border:0;background:#fff;border-radius:15px;padding:10px 2px;box-shadow:0 3px 12px #20325014;color:#26354d}.quick i{font-style:normal;font-size:23px;display:block}.quick b{font-size:10px}
+.filters{display:flex;gap:7px;overflow:auto;padding-bottom:4px;margin-bottom:13px}.filter{white-space:nowrap;border:1px solid #d9e2ee;background:#fff;color:#52617a;border-radius:20px;padding:8px 12px;font-size:12px}.filter.active{background:#0759c9;color:#fff;border-color:#0759c9}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.card{background:#fff;border:1px solid #e5ebf3;border-radius:18px;padding:14px;box-shadow:0 4px 14px #20325012;position:relative;overflow:hidden}.card:before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:#0759c9}.icon{width:46px;height:46px;border-radius:13px;background:#edf5ff;display:grid;place-items:center;font-size:25px;margin-bottom:9px}.officialLogo{font-size:15px;font-weight:900;letter-spacing:.3px}.officialLogo.pmjay{background:#fff;border:1px solid #e5ebf3}.officialLogo.pmjay svg{width:43px;height:43px;display:block}.card h3{font-size:16px;margin:0 0 6px}.card p{font-size:12px;line-height:1.5;color:#647086;margin:0 0 10px}.tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}.tag{font-size:10px;background:#eef4fb;color:#48627f;border-radius:10px;padding:4px 7px}.btn{display:block;text-align:center;text-decoration:none;background:#0759c9;color:#fff;border-radius:10px;padding:9px 7px;font-size:12px;font-weight:700;margin-top:6px}.btn.alt{background:#eaf2fc;color:#0759c9}.fav{position:absolute;right:10px;top:10px;border:0;background:#f1f5fa;border-radius:50%;width:32px;height:32px;font-size:16px;cursor:pointer}.fav.on{background:#fff0c7}.card{transition:transform .15s}.card:active{transform:scale(.99)}.notice{margin-top:18px;background:#fff9e8;border:1px solid #ffe1a0;border-radius:16px;padding:13px;font-size:12px;line-height:1.5;color:#70571c}.empty{display:none;text-align:center;background:#fff;border-radius:16px;padding:25px;color:#68758a}footer{text-align:center;color:#78869a;font-size:11px;padding:25px 10px 35px}
+@media(max-width:430px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
-
 <body>
-
 <header>
-
-<div class="logo">📱 Krish App</div>
-
-<div class="tagline">
-Government Schemes • Pension • Citizen Services
-</div>
-
+<div class="brand"><div class="appLogo"><img src="icon.svg" alt="Krish App logo"></div><div><h1>Krish App</h1><p>Sarkari Yojana • Citizen Services</p></div></div>
+<div class="search">🔎<input id="search" type="search" placeholder="योजना या सेवा खोजें..." oninput="filterCards()"></div>
 </header>
 
-
-<div class="container">
-
-<div class="search-box">
-<input
-type="text"
-id="search"
-placeholder="🔍 योजना, Pension, EPFO, Aadhaar खोजें..."
-onkeyup="searchCards()">
+<main>
+<div class="heading"><h2>Quick Services</h2><span class="small">Official links</span></div>
+<div class="quick">
+<button onclick="setCat('EPFO')"><i>🏦</i><b>EPFO</b></button>
+<button onclick="setCat('Health')"><i>🏥</i><b>Health</b></button>
+<button onclick="setCat('Documents')"><i>🪪</i><b>Documents</b></button>
+<button onclick="setCat('West Bengal')"><i>🏛️</i><b>WB Services</b></button>
 </div>
 
-
-<div class="section-title">
-📂 Categories
+<div class="heading"><h2>सरकारी सेवाएँ</h2><span id="shown" class="small"></span></div>
+<div style="display:flex;gap:7px;margin-bottom:12px"><button class="filter" onclick="showFavs()">⭐ पसंदीदा</button><button class="filter" onclick="shareApp()">📤 Share</button></div>
+<div class="filters">
+<button class="filter active" onclick="setCat('All')">सभी</button>
+<button class="filter" onclick="setCat('EPFO')">EPFO</button><button class="filter" onclick="setCat('Health')">Health</button>
+<button class="filter" onclick="setCat('Ration')">Ration</button><button class="filter" onclick="setCat('Pension')">Pension</button>
+<button class="filter" onclick="setCat('Documents')">Documents</button><button class="filter" onclick="setCat('Education')">Education</button>
+<button class="filter" onclick="setCat('Worker')">Worker</button><button class="filter" onclick="setCat('Farmer')">Farmer</button>
+<button class="filter" onclick="setCat('West Bengal')">West Bengal</button><button class="filter" onclick="setCat('Popular')">Popular</button>
 </div>
 
-<div class="categories">
+<section id="cards" class="grid">
 
-<button onclick="filterCards('all')">🏠 All</button>
+<article class="card" data-cat="EPFO" data-search="epfo uan pf provident fund कर्मचारी भविष्य निधि"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">🏦</div><h3>EPFO / UAN</h3><p>UAN, PF और कर्मचारी भविष्य निधि की आधिकारिक सेवाएँ।</p><div class="tags"><span class="tag">EPFO</span><span class="tag">UAN</span><span class="tag">PF</span></div><a class="btn" href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/" target="_blank">UAN Member Portal ↗</a><a class="btn alt" href="https://www.epfindia.gov.in/" target="_blank">EPFO Official ↗</a></article>
 
-<button onclick="filterCards('pension')">
-👴 Pension
-</button>
+<article class="card" data-cat="EPFO" data-search="epfo passbook claim status pf balance"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">📘</div><h3>EPFO Passbook</h3><p>EPF Passbook और claim से जुड़ी आधिकारिक सेवा।</p><div class="tags"><span class="tag">Passbook</span><span class="tag">Claim</span></div><a class="btn" href="https://passbook.epfindia.gov.in/MemberPassBook/login" target="_blank">Passbook ↗</a></article>
 
-<button onclick="filterCards('epfo')">
-💼 EPFO
-</button>
+<article class="card" data-cat="Worker" data-search="e shram eshram ई श्रम श्रमिक मजदूर"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">👷</div><h3>e-Shram</h3><p>असंगठित श्रमिकों के लिए आधिकारिक e-Shram portal।</p><div class="tags"><span class="tag">Worker</span><span class="tag">e-Shram</span></div><a class="btn" href="https://eshram.gov.in/" target="_blank">Official Portal ↗</a></article>
 
-<button onclick="filterCards('ration')">
-🍚 Ration
-</button>
+<article class="card" data-cat="Health" data-search="ayushman bharat pm jay pmjay आयुष्मान health"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon officialLogo pmjay" aria-label="Ayushman Bharat PM-JAY logo">
+<svg viewBox="0 0 100 100" role="img" aria-hidden="true">
+<circle cx="50" cy="50" r="47" fill="#fff" stroke="#f05a28" stroke-width="2"/>
+<path d="M50 19 C42 29 42 38 50 47 C58 38 58 29 50 19Z" fill="#8bc34a"/>
+<path d="M45 43 C31 31 23 35 20 43 C30 48 38 49 47 46Z" fill="#009447"/>
+<path d="M55 43 C69 31 77 35 80 43 C70 48 62 49 53 46Z" fill="#007a3d"/>
+<path d="M45 49 C31 45 24 50 21 57 C31 62 40 59 49 53Z" fill="#006b36"/>
+<path d="M55 49 C69 45 76 50 79 57 C69 62 60 59 51 53Z" fill="#005f31"/>
+<circle cx="50" cy="48" r="4" fill="#f15a29"/>
+<path d="M46 54 L54 54 L58 63 L50 69 L42 63Z" fill="#f15a29"/>
+<path d="M42 63 C34 68 34 73 43 73 C47 73 49 70 50 67 C51 70 53 73 57 73 C66 73 66 68 58 63Z" fill="#f15a29"/>
+<text x="50" y="84" text-anchor="middle" font-size="7" font-weight="700" fill="#149447">आयुष्मान भारत</text>
+<text x="50" y="93" text-anchor="middle" font-size="7" font-weight="800" fill="#222">PM-JAY</text>
+</svg></div><h3>Ayushman Bharat / PM-JAY</h3><p>PM-JAY की पात्रता और आधिकारिक स्वास्थ्य सेवाओं तक पहुँच।</p><div class="tags"><span class="tag">Health</span><span class="tag">PM-JAY</span></div><a class="btn" href="https://pmjay.gov.in/" target="_blank">PM-JAY Official ↗</a><a class="btn alt" href="https://www.india.gov.in/services/details/ayushman-bharat-pradhan-mantri-jan-arogya-yojana-ab-pmjay-services" target="_blank">India.gov Service ↗</a></article>
 
-<button onclick="filterCards('aadhaar')">
-🪪 Aadhaar
-</button>
+<article class="card" data-cat="Pension" data-search="nsap old age pension ignoaps वृद्धावस्था पेंशन pension"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">👴</div><h3>NSAP / Old Age Pension</h3><p>IGNOAPS और NSAP pension से संबंधित आधिकारिक जानकारी।</p><div class="tags"><span class="tag">NSAP</span><span class="tag">IGNOAPS</span></div><a class="btn" href="https://nsap.nic.in/" target="_blank">NSAP Official ↗</a><a class="btn alt" href="https://www.myscheme.gov.in/schemes/nsap-ignoaps" target="_blank">myScheme ↗</a></article>
 
-<button onclick="filterCards('scheme')">
-🏛️ Schemes
-</button>
+<article class="card" data-cat="Ration" data-search="west bengal ration card food supplies pds राशन"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">🍚</div><h3>WB Ration Card</h3><p>West Bengal Food & Supplies की राशन सेवाएँ।</p><div class="tags"><span class="tag">Ration</span><span class="tag">WB</span></div><a class="btn" href="https://wbfss.wb.gov.in/food/" target="_blank">Official Portal ↗</a></article>
 
-</div>
+<article class="card" data-cat="Documents" data-search="aadhaar uidai आधार"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">🪪</div><h3>Aadhaar / UIDAI</h3><p>आधार enrolment, update और अन्य official services।</p><div class="tags"><span class="tag">Aadhaar</span><span class="tag">UIDAI</span></div><a class="btn" href="https://uidai.gov.in/" target="_blank">UIDAI Official ↗</a></article>
 
+<article class="card" data-cat="Documents" data-search="pan income tax pan card पैन"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">💳</div><h3>PAN / Income Tax</h3><p>PAN और Income Tax की आधिकारिक सेवाएँ।</p><div class="tags"><span class="tag">PAN</span><span class="tag">Tax</span></div><a class="btn" href="https://www.incometax.gov.in/" target="_blank">Income Tax Official ↗</a></article>
 
-<div class="section-title">
-⭐ Popular Services
-</div>
+<article class="card" data-cat="Documents" data-search="digilocker digital documents digilocker दस्तावेज"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">☁️</div><h3>DigiLocker</h3><p>सरकारी digital documents को access, share और verify करने की सेवा।</p><div class="tags"><span class="tag">Documents</span><span class="tag">Digital India</span></div><a class="btn" href="https://www.digilocker.gov.in/" target="_blank">DigiLocker Official ↗</a></article>
 
+<article class="card" data-cat="Popular" data-search="umang government services schemes उमंग"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">📱</div><h3>UMANG</h3><p>कई Central और State Government services एक जगह।</p><div class="tags"><span class="tag">Popular</span><span class="tag">Govt Services</span></div><a class="btn" href="https://web.umang.gov.in/" target="_blank">UMANG Official ↗</a></article>
 
-<div class="cards" id="cards">
+<article class="card" data-cat="Popular" data-search="myscheme government schemes scheme finder सरकारी योजना"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">🔎</div><h3>myScheme</h3><p>केंद्र और राज्यों की सरकारी योजनाएँ खोजने का official one-stop platform।</p><div class="tags"><span class="tag">Scheme Finder</span><span class="tag">Popular</span></div><a class="btn" href="https://www.myscheme.gov.in/hi" target="_blank">myScheme Official ↗</a></article>
 
+<article class="card" data-cat="Popular" data-search="dbt direct benefit transfer aadhaar bank linking"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">💰</div><h3>DBT Bharat</h3><p>DBT, Aadhaar-bank linking status और सरकारी लाभ transfer की जानकारी।</p><div class="tags"><span class="tag">DBT</span><span class="tag">Bank</span></div><a class="btn" href="https://www.dbtbharat.gov.in/" target="_blank">DBT Official ↗</a></article>
 
-<!-- EPFO -->
+<article class="card" data-cat="Documents" data-search="driving licence vehicle rc challan parivahan sarathi vahan"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">🚗</div><h3>Parivahan / DL / RC</h3><p>Driving Licence, vehicle registration, challan और transport services।</p><div class="tags"><span class="tag">DL</span><span class="tag">RC</span><span class="tag">e-Challan</span></div><a class="btn" href="https://parivahan.gov.in/" target="_blank">Parivahan Official ↗</a></article>
 
-<div class="card" data-category="epfo"
-data-search="epfo uan pf provident fund कर्मचारी भविष्य निधि">
+<article class="card" data-cat="Popular" data-search="passport seva passport application renewal"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">🛂</div><h3>Passport Seva</h3><p>Passport application, appointment और status से जुड़ी official services।</p><div class="tags"><span class="tag">Passport</span><span class="tag">MEA</span></div><a class="btn" href="https://www.passportindia.gov.in/" target="_blank">Passport Seva ↗</a></article>
 
-<div class="icon">💼</div>
+<article class="card" data-cat="Worker" data-search="jobs employment ncs national career service नौकरी रोजगार"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">💼</div><h3>Jobs / NCS</h3><p>National Career Service पर jobs और employment services।</p><div class="tags"><span class="tag">Jobs</span><span class="tag">NCS</span></div><a class="btn" href="https://www.ncs.gov.in/" target="_blank">NCS Official ↗</a></article>
 
-<h3>EPFO / PF</h3>
+<article class="card" data-cat="Education" data-search="national scholarship portal nsp scholarship छात्रवृत्ति"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">🎓</div><h3>National Scholarship Portal</h3><p>कई सरकारी scholarships के लिए official NSP portal।</p><div class="tags"><span class="tag">Scholarship</span><span class="tag">NSP</span></div><a class="btn" href="https://scholarships.gov.in/" target="_blank">NSP Official ↗</a></article>
 
-<p>
-UAN, PF Balance, Claim और EPFO से जुड़ी जानकारी।
-</p>
+<article class="card" data-cat="Farmer" data-search="pm kisan किसान सम्मान निधि"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">🌾</div><h3>PM-KISAN</h3><p>किसानों के लिए PM-KISAN की official services।</p><div class="tags"><span class="tag">Farmer</span><span class="tag">PM-KISAN</span></div><a class="btn" href="https://pmkisan.gov.in/" target="_blank">PM-KISAN ↗</a></article>
 
-<a href="https://www.epfindia.gov.in/"
-target="_blank">
-Open EPFO
-</a>
+<article class="card" data-cat="Popular" data-search="pmay housing awas yojana urban 2.0 घर"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">🏠</div><h3>PMAY – Housing</h3><p>Pradhan Mantri Awas Yojana (Urban) की official services।</p><div class="tags"><span class="tag">Housing</span><span class="tag">PMAY</span></div><a class="btn" href="https://www.pmaymis.gov.in/" target="_blank">PMAY Official ↗</a></article>
 
-</div>
+<article class="card" data-cat="Popular" data-search="ujjwala lpg gas pmuy प्रधानमंत्री उज्ज्वला"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">🔥</div><h3>PM Ujjwala Yojana</h3><p>PMUY LPG connection और संबंधित official information।</p><div class="tags"><span class="tag">LPG</span><span class="tag">PMUY</span></div><a class="btn" href="https://www.pmuy.gov.in/" target="_blank">PMUY Official ↗</a></article>
 
+<article class="card" data-cat="Popular" data-search="jan dhan pmjdy bank account financial inclusion"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">🏦</div><h3>PM Jan-Dhan Yojana</h3><p>Basic bank account और financial inclusion की official जानकारी।</p><div class="tags"><span class="tag">Banking</span><span class="tag">PMJDY</span></div><a class="btn" href="https://pmjdy.gov.in/" target="_blank">PMJDY Official ↗</a></article>
 
-<!-- Pension -->
+<article class="card" data-cat="West Bengal" data-search="west bengal edistrict certificate caste income residence domicile e district"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">🏛️</div><h3>WB e-District</h3><p>West Bengal के citizen certificates और online services का single-window portal।</p><div class="tags"><span class="tag">WB</span><span class="tag">Certificates</span></div><a class="btn" href="https://www.edistrict.wb.gov.in/" target="_blank">WB e-District ↗</a></article>
 
-<div class="card" data-category="pension"
-data-search="old age pension vridha pension ignoaps jai bangla pension">
+<article class="card" data-cat="West Bengal" data-search="annapurna bhandar west bengal अन्नपूर्णा"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">🍚</div><h3>Annapurna Bhandar</h3><p>West Bengal की अन्नपूर्णा योजना/भंडार से संबंधित जानकारी।</p><div class="tags"><span class="tag">WB</span><span class="tag">Annapurna</span></div><a class="btn" href="https://socialsecurity.wb.gov.in/" target="_blank">Official Portal ↗</a></article>
 
-<div class="icon">👴</div>
+<article class="card" data-cat="West Bengal" data-search="kanyashree kanya shree कन्याश्री west bengal"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">👧</div><h3>Kanyashree</h3><p>West Bengal की Kanyashree योजना की official information।</p><div class="tags"><span class="tag">WB</span><span class="tag">Girls</span></div><a class="btn" href="https://wb.gov.in/duare_sarkar.aspx" target="_blank">WB Official ↗</a></article>
 
-<h3>Old Age Pension</h3>
+<article class="card" data-cat="Popular" data-search="voter id election commission epic voter list form 6 8"><button class="fav" onclick="toggleFav(event,this)" aria-label="पसंदीदा">☆</button><div class="icon">🗳️</div><h3>Voter Services / ECINET</h3><p>Voter registration, correction, E-EPIC और voter-list search की official services।</p><div class="tags"><span class="tag">Voter ID</span><span class="tag">ECI</span></div><a class="btn" href="https://voters.eci.gov.in/" target="_blank">ECI Voter Portal ↗</a></article>
 
-<p>
-वृद्धावस्था पेंशन और pension application की जानकारी।
-</p>
-
-<a href="https://nsap.nic.in/"
-target="_blank">
-Open NSAP
-</a>
-
-</div>
-
-
-<!-- Ration -->
-
-<div class="card" data-category="ration"
-data-search="ration card khadya sathi food wb ration">
-
-<div class="icon">🍚</div>
-
-<h3>Ration Card</h3>
-
-<p>
-Ration Card, Food & Supplies तथा beneficiary services।
-</p>
-
-<a href="https://food.wb.gov.in/"
-target="_blank">
-Open Portal
-</a>
-
-</div>
-
-
-<!-- Aadhaar -->
-
-<div class="card" data-category="aadhaar"
-data-search="aadhaar uidai aadhaar card update">
-
-<div class="icon">🪪</div>
-
-<h3>Aadhaar</h3>
-
-<p>
-Aadhaar download, update और authentication services।
-</p>
-
-<a href="https://uidai.gov.in/"
-target="_blank">
-Open UIDAI
-</a>
-
-</div>
-
-
-<!-- DigiLocker -->
-
-<div class="card" data-category="scheme"
-data-search="digilocker documents certificate pan aadhaar">
-
-<div class="icon">📁</div>
-
-<h3>DigiLocker</h3>
-
-<p>
-Digital documents और certificates सुरक्षित रखें।
-</p>
-
-<a href="https://www.digilocker.gov.in/"
-target="_blank">
-Open DigiLocker
-</a>
-
-</div>
-
-
-<!-- PM Kisan -->
-
-<div class="card" data-category="scheme"
-data-search="pm kisan samman nidhi किसान">
-
-<div class="icon">🌾</div>
-
-<h3>PM-KISAN</h3>
-
-<p>
-किसानों के लिए PM-KISAN योजना और beneficiary services।
-</p>
-
-<a href="https://pmkisan.gov.in/"
-target="_blank">
-Open PM-KISAN
-</a>
-
-</div>
-
-
-<!-- Ayushman -->
-
-<div class="card" data-category="scheme"
-data-search="ayushman bharat pm jay health card">
-
-<div class="icon">🏥</div>
-
-<h3>Ayushman Bharat</h3>
-
-<p>
-स्वास्थ्य योजना और PM-JAY से जुड़ी official जानकारी।
-</p>
-
-<a href="https://pmjay.gov.in/"
-target="_blank">
-Open PM-JAY
-</a>
-
-</div>
-
-
-<!-- Swasthya Sathi -->
-
-<div class="card" data-category="scheme"
-data-search="swasthya sathi west bengal health">
-
-<div class="icon">❤️</div>
-
-<h3>Swasthya Sathi</h3>
-
-<p>
-West Bengal Swasthya Sathi scheme information।
-</p>
-
-<a href="https://swasthyasathi.gov.in/"
-target="_blank">
-Open Portal
-</a>
-
-</div>
-
-
-<!-- PAN -->
-
-<div class="card" data-category="scheme"
-data-search="pan card income tax e pan">
-
-<div class="icon">💳</div>
-
-<h3>PAN Card</h3>
-
-<p>
-PAN card और Income Tax से संबंधित official services।
-</p>
-
-<a href="https://www.incometax.gov.in/"
-target="_blank">
-Open Portal
-</a>
-
-</div>
-
-
-<!-- UMANG -->
-
-<div class="card" data-category="scheme"
-data-search="umang government services india">
-
-<div class="icon">📲</div>
-
-<h3>UMANG</h3>
-
-<p>
-कई सरकारी सेवाओं को एक ही platform से access करें।
-</p>
-
-<a href="https://web.umang.gov.in/"
-target="_blank">
-Open UMANG
-</a>
-
-</div>
-
-
-<!-- West Bengal -->
-
-<div class="card" data-category="scheme"
-data-search="west bengal government portal banglarbhumi">
-
-<div class="icon">🏛️</div>
-
-<h3>West Bengal Services</h3>
-
-<p>
-West Bengal Government की विभिन्न online services।
-</p>
-
-<a href="https://wb.gov.in/"
-target="_blank">
-Open WB Portal
-</a>
-
-</div>
-
-
-<!-- Banglarbhumi -->
-
-<div class="card" data-category="scheme"
-data-search="banglarbhumi land west bengal land record">
-
-<div class="icon">🏡</div>
-
-<h3>BanglarBhumi</h3>
-
-<p>
-भूमि रिकॉर्ड और West Bengal land related services।
-</p>
-
-<a href="https://banglarbhumi.gov.in/"
-target="_blank">
-Open Portal
-</a>
-
-</div>
-
-
-</div>
-
-
-<div class="no-result" id="noResult">
-❌ कोई service नहीं मिली।
-</div>
-
-
-<div class="notice">
-
-<b>⚠️ Important:</b><br>
-
-Krish App केवल सरकारी योजनाओं और सेवाओं की जानकारी उपलब्ध कराने के लिए है।
-किसी भी आवेदन या भुगतान से पहले संबंधित
-<b>official government website</b> पर जानकारी जरूर जांचें।
-
-</div>
-
-</div>
-
-
-<footer>
-
-<div class="footer-logo">
-📱 Krish App
-</div>
-
-Government Schemes & Citizen Information Portal
-
-<br><br>
-
-© 2026 Krish App • ksh Lohar
-
-</footer>
-
+</section>
+<div id="empty" class="empty">🔎 कोई सेवा नहीं मिली। दूसरा नाम खोजें।</div>
+<div id="favEmpty" class="empty" style="display:none">⭐ अभी कोई पसंदीदा सेवा नहीं है।</div>
+<div class="notice">⚠️ <b>जरूरी सूचना:</b> Krish App केवल official portals तक आसान पहुँच देता है। पात्रता, लाभ, शुल्क और आवेदन की अंतिम जानकारी संबंधित सरकारी website पर ही जाँचें।</div>
+</main>
+<footer><button class="filter" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️ ऊपर जाएँ</button><br><b>Krish App V6</b><br>Sarkari Yojana & Citizen Services<br>© 2026 KSH Lohar</footer>
 
 <script>
-
-function searchCards(){
-
-let input =
-document.getElementById("search")
-.value
-.toLowerCase();
-
-let cards =
-document.querySelectorAll(".card");
-
-let found = 0;
-
-cards.forEach(function(card){
-
-let text =
-(
-card.innerText +
-" " +
-card.dataset.search
-)
-.toLowerCase();
-
-if(text.includes(input)){
-
-card.style.display="block";
-found++;
-
-}else{
-
-card.style.display="none";
-
+let currentCat='All';
+const favs=JSON.parse(localStorage.getItem('krishFavs')||'[]');
+function setCat(c){
+ currentCat=c;
+ document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',
+  (c==='All'&&b.textContent.trim()==='सभी')||b.textContent.trim().toLowerCase()===c.toLowerCase()));
+ filterCards();
 }
-
-});
-
-document.getElementById("noResult").style.display =
-found === 0 ? "block" : "none";
-
+function key(x){return x.dataset.search.split(' ')[0]+'|'+x.querySelector('h3').innerText}
+function toggleFav(e,b){
+ e.stopPropagation(); const x=b.closest('.card'), k=key(x);
+ if(favs.includes(k)){favs.splice(favs.indexOf(k),1);b.classList.remove('on');b.textContent='☆'}
+ else{favs.push(k);b.classList.add('on');b.textContent='★'}
+ localStorage.setItem('krishFavs',JSON.stringify(favs));
 }
-
-
-function filterCards(category){
-
-let cards =
-document.querySelectorAll(".card");
-
-document.getElementById("search").value="";
-
-let found=0;
-
-cards.forEach(function(card){
-
-if(
-category==="all" ||
-card.dataset.category===category
-){
-
-card.style.display="block";
-found++;
-
-}else{
-
-card.style.display="none";
-
+function syncFavs(){document.querySelectorAll('.card').forEach(x=>{let b=x.querySelector('.fav');if(favs.includes(key(x))){b.classList.add('on');b.textContent='★'}})}
+function showFavs(){
+ currentCat='All'; document.getElementById('search').value='';
+ document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+ let n=0; document.querySelectorAll('.card').forEach(x=>{let ok=favs.includes(key(x));x.style.display=ok?'block':'none';if(ok)n++});
+ document.getElementById('shown').textContent=n+' पसंदीदा';
+ document.getElementById('empty').style.display='none';
+ document.getElementById('favEmpty').style.display=n?'none':'block';
 }
-
-});
-
-document.getElementById("noResult").style.display =
-found === 0 ? "block" : "none";
-
+function shareApp(){
+ const data={title:'Krish App',text:'Krish App – Sarkari Yojana & Citizen Services'};
+ if(navigator.share) navigator.share(data).catch(()=>{}); else alert('Krish App: Sarkari Yojana & Citizen Services');
 }
-
+function filterCards(){
+ document.getElementById('favEmpty').style.display='none';
+ const q=document.getElementById('search').value.toLowerCase().trim(); let n=0;
+ document.querySelectorAll('.card').forEach(x=>{
+  const ok=(currentCat==='All'||x.dataset.cat===currentCat)&&(!q||(x.dataset.search+' '+x.innerText).toLowerCase().includes(q));
+  x.style.display=ok?'block':'none'; if(ok)n++;
+ });
+ document.getElementById('shown').textContent=n+' सेवाएँ';
+ document.getElementById('empty').style.display=n?'none':'block';
+}
+syncFavs(); filterCards();
 </script>
 
-</body>
-</html>
+<script>
+if ('serviceWorker' in navigator) { window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{})); }
+</script>
+</body></html>

@@ -1,0 +1,10 @@
+{
+  "name": "Krish App V6 – Citizen Services",
+  "short_name": "Krish App",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f3f7fc",
+  "theme_color": "#0759c9",
+  "description": "Sarkari Yojana & Citizen Services",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
