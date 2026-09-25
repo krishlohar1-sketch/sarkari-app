@@ -3,141 +3,206 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#073b7a">
-<meta name="description" content="Krish App V8 - Sarkari Yojana, Government Websites & Citizen Services">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0757b8">
+<meta name="description" content="सरकारी योजनाओं, सरकारी वेबसाइटों और नागरिक सेवाओं तक आसान पहुँच।">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Krish App V8 – Sarkari Services</title>
+<title>Krish App – Sarkari Services</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" type="image/png">
 <style>
-:root{--navy:#073b7a;--blue:#0b66c3;--sky:#16a8e0;--green:#0b9a68;--bg:#f4f7fb;--ink:#16243a;--muted:#68788f;--line:#e2e9f2;--shadow:0 8px 28px rgba(20,50,90,.10)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,"Noto Sans Devanagari",sans-serif;padding-bottom:82px}
-button,input{font:inherit}button{cursor:pointer}
-.top{background:linear-gradient(135deg,#052e64 0%,#073b7a 45%,#0b9a68 100%);color:#fff;padding:18px 15px 22px;border-radius:0 0 30px 30px;box-shadow:0 6px 25px rgba(0,40,90,.22);position:sticky;top:0;z-index:30}
-.brand{display:flex;align-items:center;gap:11px;max-width:1000px;margin:auto}
-.logo{width:52px;height:52px;border-radius:16px;background:#fff;padding:3px;box-shadow:0 5px 16px #001b4433;flex:none}.logo img{width:100%;height:100%;display:block;border-radius:13px}
-.brand h1{font-size:23px;margin:0;font-weight:900;letter-spacing:.2px}.brand p{font-size:11px;margin:3px 0 0;opacity:.9}
-.badge{margin-left:auto;background:#ffffff1f;border:1px solid #ffffff35;border-radius:999px;padding:7px 9px;font-size:10px;font-weight:800}
-.search{max-width:1000px;margin:15px auto 0;background:#fff;border-radius:15px;display:flex;align-items:center;padding:0 12px;color:#62738a;box-shadow:0 5px 18px #001b4420}
-.search input{width:100%;border:0;outline:0;padding:13px 8px;background:transparent;color:#182235;font-size:14px}
-.wrap{max-width:1000px;margin:auto;padding:14px 14px 20px}
-.screen{display:none;animation:fade .18s ease}.screen.active{display:block}@keyframes fade{from{opacity:.3;transform:translateY(4px)}to{opacity:1;transform:none}}
-.hero{margin-top:2px;background:linear-gradient(135deg,#fff,#eef7ff);border:1px solid #dceaf7;border-radius:22px;padding:17px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;width:140px;height:140px;border-radius:50%;right:-55px;top:-60px;background:#0b9a6818}
-.hero h2{margin:0 0 6px;font-size:20px}.hero p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
-.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center}.stat b{display:block;font-size:18px;color:var(--navy)}.stat span{font-size:9px;color:var(--muted)}
-.sectionHead{display:flex;align-items:center;justify-content:space-between;margin:20px 2px 10px}.sectionHead h2{font-size:17px;margin:0}.small{font-size:10px;color:var(--muted)}
-.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.quick button{border:0;background:#fff;border:1px solid var(--line);border-radius:15px;padding:11px 3px;box-shadow:0 4px 14px #1c3b5c0d;color:var(--ink)}.quick i{display:block;font-style:normal;font-size:22px;margin-bottom:4px}.quick b{font-size:10px}
-.categoryGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.catCard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:var(--shadow);text-align:left;position:relative;overflow:hidden}
-.catCard:before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:linear-gradient(#0b66c3,#0b9a68)}
-.catIcon{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:#edf6ff;font-size:23px;margin-bottom:8px}
-.catCard b{display:block;font-size:14px}.catCard span{display:block;font-size:10px;color:var(--muted);margin-top:4px}
-.list{display:grid;gap:10px}
-.service{background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px;box-shadow:0 5px 18px #17385a0d;display:flex;gap:10px;align-items:center;position:relative}
-.sicon{width:48px;height:48px;border-radius:14px;background:linear-gradient(145deg,#edf6ff,#e8fbf3);display:grid;place-items:center;font-size:24px;flex:none}
-.service h3{font-size:14px;margin:0 0 4px}.service p{font-size:10px;color:var(--muted);margin:0;line-height:1.4}
-.serviceMain{min-width:0;flex:1}.go{border:0;background:var(--navy);color:#fff;border-radius:10px;padding:9px 10px;font-size:10px;font-weight:800;flex:none}
-.star{position:absolute;right:8px;top:7px;border:0;background:#f3f6fa;border-radius:50%;width:27px;height:27px;font-size:14px}.star.on{background:#fff0c5}
-.detail{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:var(--shadow)}
-.back{border:0;background:#edf4fb;color:var(--navy);border-radius:11px;padding:9px 12px;font-size:11px;font-weight:800;margin-bottom:13px}
-.detailIcon{width:72px;height:72px;border-radius:20px;background:linear-gradient(145deg,#e9f4ff,#e6fbf2);display:grid;place-items:center;font-size:38px;margin-bottom:12px}
-.detail h2{margin:0 0 7px;font-size:22px}.detail .cat{display:inline-block;background:#eaf3ff;color:var(--navy);padding:5px 9px;border-radius:999px;font-size:10px;font-weight:800;margin-bottom:10px}
-.detail p{font-size:13px;color:var(--muted);line-height:1.65}.openBtn{display:block;text-align:center;text-decoration:none;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:13px;border-radius:13px;font-size:13px;font-weight:900;margin-top:14px;box-shadow:0 7px 18px #0759c933}
-.favBtn{display:block;width:100%;border:1px solid #dce5ef;background:#f7faff;color:var(--navy);padding:11px;border-radius:13px;font-size:12px;font-weight:800;margin-top:8px}
-.notice{margin-top:16px;background:#fff9e9;border:1px solid #ffe0a0;border-radius:16px;padding:12px;font-size:10px;line-height:1.55;color:#6b561e}
-.empty{display:none;text-align:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px 15px;color:var(--muted);font-size:12px}
-.bottom{position:fixed;bottom:0;left:0;right:0;height:68px;background:#fff;border-top:1px solid #dce4ee;display:grid;grid-template-columns:repeat(4,1fr);z-index:50;box-shadow:0 -5px 20px #18344b12}
-.bottom button{border:0;background:transparent;color:#718096;font-size:9px;font-weight:800}.bottom i{display:block;font-style:normal;font-size:21px;margin-bottom:2px}.bottom button.on{color:var(--navy)}
-.chips{display:flex;gap:7px;overflow:auto;padding:3px 0 5px;margin-bottom:8px}.chip{white-space:nowrap;border:1px solid #dce5ef;background:#fff;color:#52627a;border-radius:999px;padding:8px 11px;font-size:10px}.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
-.headerRow{display:flex;gap:8px;align-items:center}.headerRow h2{margin:0;font-size:18px}
-footer{text-align:center;color:#8793a3;font-size:9px;padding:24px 5px 10px}
-@media(min-width:700px){.quick{grid-template-columns:repeat(8,1fr)}.categoryGrid{grid-template-columns:repeat(3,1fr)}.list{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:390px){.badge{display:none}.brand h1{font-size:20px}.quick b{font-size:9px}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Devanagari",Arial,sans-serif;color:#10233f;
+background:linear-gradient(135deg,#eef7ff 0%,#f7f4ff 42%,#e9fff6 100%);min-height:100vh}
+button,input{font:inherit}.app{max-width:720px;margin:auto;min-height:100vh;padding-bottom:82px}
+header{position:sticky;top:0;z-index:10;padding:14px 14px 12px;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid #dbe7f5}
+.brand{display:flex;align-items:center;gap:10px}.brand img{width:48px;height:48px;border-radius:14px;box-shadow:0 5px 16px #0b4b8a22}
+.brand h1{font-size:21px;margin:0;color:#064a9e}.brand p{font-size:11px;margin:2px 0 0;color:#5c6d82}
+.actions{margin-left:auto;display:flex;gap:7px}.topbtn{border:0;background:#eaf3ff;color:#0757b8;border-radius:12px;padding:9px 10px;font-weight:700}
+.hero{margin:14px;border-radius:24px;padding:20px;background:linear-gradient(135deg,#0757b8,#1378d8 55%,#0c9d78);color:white;box-shadow:0 12px 30px #0757b83a}
+.hero h2{margin:0 0 8px;font-size:23px}.hero p{margin:0;line-height:1.55;font-size:14px;opacity:.96}.heroBtns{display:flex;gap:9px;margin-top:15px;flex-wrap:wrap}
+.heroBtns button{border:0;border-radius:12px;padding:10px 13px;font-weight:800;background:white;color:#0757b8}
+.search{margin:0 14px 14px;display:flex;gap:8px}.search input{width:100%;border:1px solid #d6e3f2;border-radius:15px;padding:13px 14px;outline:0;background:white;box-shadow:0 5px 18px #164f8b12}
+.section{padding:0 14px}.sectionHead{display:flex;align-items:center;justify-content:space-between;margin:15px 0 9px}.sectionHead h2{font-size:18px;margin:0}.count{font-size:12px;color:#61758d}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.catCard{border:1px solid #dbe7f5;background:rgba(255,255,255,.88);border-radius:17px;padding:14px;text-align:left;box-shadow:0 5px 18px #315a8b0d}.catIcon{font-size:25px}.catCard b{display:block;margin-top:5px;font-size:14px}.catCard span{display:block;font-size:11px;color:#718096;margin-top:3px}
+.service{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.94);border:1px solid #dbe7f5;border-radius:17px;padding:11px;margin-bottom:9px;box-shadow:0 5px 18px #315a8b0d}.sicon{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:24px;background:#eef6ff;flex:none}.serviceMain{min-width:0;flex:1}.serviceMain h3{font-size:14px;margin:0 0 3px}.serviceMain p{font-size:11px;color:#687a90;margin:0;line-height:1.35}.go{border:0;background:#0757b8;color:#fff;border-radius:10px;padding:8px 9px;font-size:12px;font-weight:800}.star{border:0;background:transparent;color:#9aa8b8;font-size:20px;padding:2px}.star.on{color:#f3a400}.chiprow{display:flex;gap:7px;overflow:auto;padding-bottom:9px}.chip{white-space:nowrap;border:1px solid #d4e2f2;background:#fff;border-radius:20px;padding:7px 10px;font-size:12px}.chip.on{background:#0757b8;color:#fff;border-color:#0757b8}
+.screen{display:none}.screen.active{display:block}.detail{margin:14px;background:#fff;border-radius:22px;padding:20px;box-shadow:0 8px 25px #315a8b15}.detailIcon{font-size:48px}.detail h2{margin:8px 0}.detail p{color:#60738b;line-height:1.55}.notice{background:#fff8df;border:1px solid #f1df9c;border-radius:13px;padding:11px;font-size:12px;line-height:1.5}.openBtn,.favBtn{display:block;text-align:center;text-decoration:none;border:0;width:100%;margin-top:12px;border-radius:13px;padding:12px;font-weight:800}.openBtn{background:#0757b8;color:white}.favBtn{background:#eaf3ff;color:#0757b8}
+.about{margin:14px;background:#fff;border-radius:22px;padding:20px;line-height:1.65;box-shadow:0 8px 25px #315a8b15}.rating{display:flex;gap:5px;margin:12px 0}.rate{border:0;background:#eef4fb;border-radius:10px;font-size:25px;padding:5px 8px}.rate.on{background:#fff1c9}.small{font-size:12px;color:#6c7d91}
+.bottom{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:min(720px,100%);display:grid;grid-template-columns:repeat(4,1fr);background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-top:1px solid #dbe7f5;padding:7px 8px calc(7px + env(safe-area-inset-bottom));z-index:20}.bottom button{border:0;background:transparent;color:#718096;font-size:11px;font-weight:700;padding:6px}.bottom button.on{color:#0757b8}.bottom span{display:block;font-size:20px;line-height:21px}
+.empty{display:none;text-align:center;padding:30px;color:#73859a}
+@media(min-width:600px){.grid{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body>
-<header class="top">
+<div class="app">
+<header>
   <div class="brand">
-    <div class="logo"><img src="icon.svg" alt="Krish App V8"></div>
-    <div><h1>Krish App V8</h1><p>Sarkari Yojana • Citizen Services</p></div>
-    <div class="badge">V8 • 4 LAYER</div>
+    <img src="icon-192.png" alt="Krish App">
+    <div><h1>Krish App</h1><p>सरकारी योजनाएँ • वेबसाइटें • नागरिक सेवाएँ</p></div>
+    <div class="actions"><button class="topbtn" onclick="shareApp()">↗️</button><button class="topbtn" onclick="showRating()">⭐</button></div>
   </div>
-  <div class="search">🔎<input id="search" type="search" placeholder="योजना, सेवा या वेबसाइट खोजें..." oninput="globalSearch()"></div>
 </header>
-<main class="wrap">
-<section id="home" class="screen active">
-  <div class="hero"><h2>🇮🇳 सरकारी सेवाएँ — एक जगह</h2>
-  <p>सरकारी योजनाओं, दस्तावेज़, पेंशन, स्वास्थ्य, नौकरी और West Bengal सेवाओं के official portals तक आसान पहुँच।</p>
-  <div class="stats"><div class="stat"><b id="totalCount">56+</b><span>सेवाएँ</span></div><div class="stat"><b>12</b><span>श्रेणियाँ</span></div><div class="stat"><b>4</b><span>लेयर</span></div></div></div>
-  <div class="sectionHead"><h2>⚡ Quick Access</h2><span class="small">एक टैप</span></div>
-  <div class="quick">
-    <button onclick="openCategory('Popular')"><i>🔥</i><b>Popular</b></button><button onclick="openCategory('West Bengal')"><i>🏛️</i><b>WB Services</b></button>
-    <button onclick="openCategory('Documents')"><i>🪪</i><b>Documents</b></button><button onclick="openCategory('Health')"><i>🏥</i><b>Health</b></button>
-    <button onclick="openCategory('Worker')"><i>👷</i><b>Worker</b></button><button onclick="openCategory('Pension')"><i>👴</i><b>Pension</b></button>
-    <button onclick="openCategory('Education')"><i>🎓</i><b>Education</b></button><button onclick="openCategory('Farmer')"><i>🌾</i><b>Farmer</b></button>
-  </div>
-  <div class="sectionHead"><h2>⭐ सबसे उपयोगी</h2><span class="small">Popular</span></div>
-  <div id="homePopular" class="list"></div>
-  <div class="notice">⚠️ <b>महत्वपूर्ण:</b> Krish App किसी सरकारी विभाग की official app नहीं है। यह केवल official/public government portals तक आसान पहुँच देता है। आवेदन, पात्रता, शुल्क और अंतिम जानकारी संबंधित सरकारी वेबसाइट पर ही जाँचें।</div>
+
+<main id="home" class="screen active">
+<section class="hero">
+  <h2>सरकारी सेवाएँ, अब एक जगह</h2>
+  <p>Krish App के माध्यम से सरकारी योजनाओं, आधिकारिक वेबसाइटों और नागरिक सेवाओं तक आसान पहुँच पाएँ। सही जानकारी के लिए हमेशा संबंधित सरकारी पोर्टल का उपयोग करें।</p>
+  <div class="heroBtns"><button onclick="shareApp()">📤 ऐप शेयर करें</button><button onclick="showRating()">⭐ रेटिंग दें</button></div>
 </section>
-<section id="categories" class="screen"><div class="sectionHead"><h2>📂 सभी श्रेणियाँ</h2><span class="small">Layer 2</span></div><div id="categoryGrid" class="categoryGrid"></div></section>
-<section id="services" class="screen"><div class="headerRow"><button class="back" onclick="go('categories')">← पीछे</button><h2 id="serviceTitle">सेवाएँ</h2></div><div class="chips" id="chips"></div><div id="serviceList" class="list"></div><div id="serviceEmpty" class="empty">🔎 कोई सेवा नहीं मिली। दूसरा शब्द खोजें।</div></section>
-<section id="detail" class="screen"><div class="detail"><button class="back" onclick="go('services')">← सेवाओं पर वापस</button><div id="detailContent"></div></div></section>
-<section id="favorites" class="screen"><div class="sectionHead"><h2>⭐ मेरी पसंदीदा सेवाएँ</h2><span class="small">इस फोन में सेव</span></div><div id="favList" class="list"></div><div id="favEmpty" class="empty">⭐ अभी कोई पसंदीदा सेवा नहीं है।<br><br>किसी सेवा पर ☆ दबाकर यहाँ जोड़ें।</div></section>
-<footer>Krish App V8 • Sarkari Yojana & Citizen Services<br>© 2026 KSH Lohar</footer>
+<div class="search"><input id="homeSearch" placeholder="🔎 योजना, सेवा या वेबसाइट खोजें..." oninput="homeSearch()"></div>
+<section class="section"><div class="sectionHead"><h2>लोकप्रिय सेवाएँ</h2><span class="count" id="totalCount"></span></div><div id="homePopular"></div></section>
+<section class="section"><div class="sectionHead"><h2>श्रेणियाँ</h2></div><div id="categoryGrid" class="grid"></div></section>
 </main>
+
+<section id="services" class="screen">
+<div class="section" style="padding-top:14px"><div class="sectionHead"><h2 id="serviceTitle">सभी सेवाएँ</h2><span class="count" id="serviceCount"></span></div><div id="chips" class="chiprow"></div><div id="serviceList"></div><div id="serviceEmpty" class="empty">कोई सेवा नहीं मिली।</div></div>
+</section>
+
+<section id="favorites" class="screen">
+<div class="section" style="padding-top:14px"><div class="sectionHead"><h2>⭐ मेरी पसंदीदा सेवाएँ</h2></div><div id="favList"></div><div id="favEmpty" class="empty">अभी कोई पसंदीदा सेवा नहीं है।</div></div>
+</section>
+
+<section id="about" class="screen">
+<div class="about">
+<h2>ℹ️ Krish App के बारे में</h2>
+<p><b>Krish App</b> एक सरल नागरिक-सहायता ऐप है, जिसका उद्देश्य सरकारी योजनाओं, आधिकारिक वेबसाइटों और ऑनलाइन नागरिक सेवाओं तक पहुँच को आसान बनाना है।</p>
+<p>यह ऐप किसी सरकारी विभाग की आधिकारिक ऐप नहीं है। किसी भी आवेदन, OTP, पासवर्ड या भुगतान से पहले संबंधित सरकारी वेबसाइट का URL और जानकारी जरूर जाँचें।</p>
+<h3>⭐ ऐप को रेट करें</h3>
+<div class="rating" id="ratingStars"></div><div class="small" id="ratingText">अपनी पसंद की रेटिंग चुनें।</div>
+</div>
+</section>
+
+<section id="detail" class="screen"><div class="detail" id="detailContent"></div></section>
+</div>
+
 <nav class="bottom">
-<button id="navHome" class="on" onclick="go('home')"><i>🏠</i>होम</button><button id="navCategories" onclick="go('categories')"><i>📂</i>श्रेणियाँ</button><button id="navFavorites" onclick="go('favorites')"><i>⭐</i>पसंदीदा</button><button id="navAbout" onclick="showAbout()"><i>ℹ️</i>About</button>
+<button id="navHome" class="on" onclick="go('home')"><span>🏠</span>होम</button>
+<button id="navServices" onclick="go('services')"><span>📋</span>सेवाएँ</button>
+<button id="navFavorites" onclick="go('favorites')"><span>⭐</span>पसंदीदा</button>
+<button id="navAbout" onclick="go('about')"><span>ℹ️</span>जानकारी</button>
 </nav>
+
 <script>
-const services = [{"name": "UMANG", "icon": "🇮🇳", "cat": "Central", "desc": "One-stop government services app/portal.", "url": "https://web.umang.gov.in/", "label": "UMANG"}, {"name": "India.gov.in", "icon": "🌐", "cat": "Central", "desc": "National Portal of India — government information and services.", "url": "https://www.india.gov.in/", "label": "India.gov"}, {"name": "myScheme", "icon": "🔎", "cat": "Central", "desc": "सरकारी योजनाएँ खोजें, eligibility और application guidance.", "url": "https://www.myscheme.gov.in/hi", "label": "myScheme"}, {"name": "ServicePlus", "icon": "🧾", "cat": "Central", "desc": "Central/state citizen services and application tracking.", "url": "https://serviceonline.gov.in/", "label": "ServicePlus"}, {"name": "DigiLocker", "icon": "📁", "cat": "Documents", "desc": "Digital documents, certificates and verification.", "url": "https://www.digilocker.gov.in/", "label": "DigiLocker"}, {"name": "Aadhaar / UIDAI", "icon": "🪪", "cat": "Documents", "desc": "Aadhaar enrolment, update and online services.", "url": "https://uidai.gov.in/", "label": "UIDAI"}, {"name": "PAN / Income Tax", "icon": "💳", "cat": "Documents", "desc": "PAN and Income Tax e-services.", "url": "https://www.incometax.gov.in/", "label": "Income Tax"}, {"name": "EPFO / UAN", "icon": "🏦", "cat": "Worker", "desc": "UAN, PF, claim and employee services.", "url": "https://unifiedportal-mem.epfindia.gov.in/memberinterface/", "label": "EPFO"}, {"name": "EPFO Passbook", "icon": "📘", "cat": "Worker", "desc": "EPF passbook and balance services.", "url": "https://passbook.epfindia.gov.in/MemberPassBook/login", "label": "EPFO Passbook"}, {"name": "e-Shram", "icon": "👷", "cat": "Worker", "desc": "Unorganised worker registration and services.", "url": "https://eshram.gov.in/", "label": "e-Shram"}, {"name": "National Career Service", "icon": "💼", "cat": "Worker", "desc": "Jobs, career and employment services.", "url": "https://www.ncs.gov.in/", "label": "NCS"}, {"name": "Ayushman Bharat PM-JAY", "icon": "🏥", "cat": "Health", "desc": "Ayushman Bharat health assurance services.", "url": "https://pmjay.gov.in/", "label": "PM-JAY"}, {"name": "ABHA Health ID", "icon": "🩺", "cat": "Health", "desc": "ABHA and digital health ecosystem.", "url": "https://abha.abdm.gov.in/", "label": "ABHA"}, {"name": "NSAP / Old Age Pension", "icon": "👴", "cat": "Pension", "desc": "National Social Assistance Programme and pension information.", "url": "https://nsap.nic.in/", "label": "NSAP"}, {"name": "Jeevan Pramaan", "icon": "❤️", "cat": "Pension", "desc": "Digital Life Certificate for pensioners.", "url": "https://jeevanpramaan.gov.in/", "label": "Jeevan Pramaan"}, {"name": "NPS", "icon": "💰", "cat": "Pension", "desc": "National Pension System services.", "url": "https://enps.nsdl.com/", "label": "NPS"}, {"name": "DBT Bharat", "icon": "💸", "cat": "Banking", "desc": "Direct Benefit Transfer information and services.", "url": "https://dbtbharat.gov.in/", "label": "DBT Bharat"}, {"name": "PFMS", "icon": "🏛️", "cat": "Banking", "desc": "Public Financial Management System.", "url": "https://pfms.nic.in/", "label": "PFMS"}, {"name": "PM Jan-Dhan Yojana", "icon": "🏦", "cat": "Banking", "desc": "Financial inclusion and basic banking scheme information.", "url": "https://pmjdy.gov.in/", "label": "PMJDY"}, {"name": "PM-KISAN", "icon": "🌾", "cat": "Farmer", "desc": "PM-KISAN farmer services and status.", "url": "https://pmkisan.gov.in/", "label": "PM-KISAN"}, {"name": "PM Kisan Maandhan", "icon": "👨‍🌾", "cat": "Farmer", "desc": "Pension scheme information for small and marginal farmers.", "url": "https://maandhan.in/", "label": "PM-Kisan Maandhan"}, {"name": "Kisan Credit Card", "icon": "🌱", "cat": "Farmer", "desc": "KCC information and agriculture credit guidance.", "url": "https://www.myscheme.gov.in/", "label": "myScheme"}, {"name": "PMAY – Urban", "icon": "🏠", "cat": "Housing", "desc": "Pradhan Mantri Awas Yojana Urban portal.", "url": "https://www.pmaymis.gov.in/", "label": "PMAY-U"}, {"name": "PMAY – Gramin", "icon": "🏡", "cat": "Housing", "desc": "Pradhan Mantri Awas Yojana Gramin.", "url": "https://pmayg.nic.in/", "label": "PMAY-G"}, {"name": "PM Ujjwala Yojana", "icon": "🔥", "cat": "Popular", "desc": "PMUY LPG connection information.", "url": "https://www.pmuy.gov.in/", "label": "PMUY"}, {"name": "PM Mudra Yojana", "icon": "💼", "cat": "Banking", "desc": "Micro enterprise loan scheme information.", "url": "https://www.mudra.org.in/", "label": "MUDRA"}, {"name": "PM SVANidhi", "icon": "🛒", "cat": "Worker", "desc": "Street vendor scheme information.", "url": "https://pmsvanidhi.mohua.gov.in/", "label": "PM SVANidhi"}, {"name": "National Scholarship Portal", "icon": "🎓", "cat": "Education", "desc": "Government scholarship application portal.", "url": "https://scholarships.gov.in/", "label": "NSP"}, {"name": "SWAYAM", "icon": "📚", "cat": "Education", "desc": "Government online courses and learning platform.", "url": "https://swayam.gov.in/", "label": "SWAYAM"}, {"name": "Parivahan / DL / RC", "icon": "🚗", "cat": "Transport", "desc": "Driving licence, vehicle registration and transport services.", "url": "https://parivahan.gov.in/", "label": "Parivahan"}, {"name": "e-Challan", "icon": "🚦", "cat": "Transport", "desc": "Official traffic challan services.", "url": "https://echallan.parivahan.gov.in/", "label": "e-Challan"}, {"name": "Passport Seva", "icon": "🛂", "cat": "Documents", "desc": "Passport application, appointment and status.", "url": "https://www.passportindia.gov.in/", "label": "Passport Seva"}, {"name": "Voter Services", "icon": "🗳️", "cat": "Documents", "desc": "Voter registration, correction and voter services.", "url": "https://voters.eci.gov.in/", "label": "ECI Voter"}, {"name": "CPGRAMS Grievance", "icon": "📣", "cat": "Popular", "desc": "Central government public grievance portal.", "url": "https://pgportal.gov.in/", "label": "CPGRAMS"}, {"name": "RTI Online", "icon": "📄", "cat": "Popular", "desc": "Central public authorities RTI online services.", "url": "https://rtionline.gov.in/", "label": "RTI Online"}, {"name": "National Consumer Helpline", "icon": "🛍️", "cat": "Popular", "desc": "Consumer grievance and helpline services.", "url": "https://consumerhelpline.gov.in/", "label": "NCH"}, {"name": "eCourts", "icon": "⚖️", "cat": "Popular", "desc": "Court case status and eCourts services.", "url": "https://ecourts.gov.in/", "label": "eCourts"}, {"name": "Indian Railways", "icon": "🚆", "cat": "Transport", "desc": "Official railway passenger services.", "url": "https://www.irctc.co.in/", "label": "IRCTC"}, {"name": "WB e-District", "icon": "🏛️", "cat": "West Bengal", "desc": "Certificates and citizen services single-window portal.", "url": "https://www.edistrict.wb.gov.in/", "label": "WB e-District"}, {"name": "Bangla Sahayata Kendra", "icon": "🏢", "cat": "West Bengal", "desc": "West Bengal citizen services through BSK.", "url": "https://bsk.wb.gov.in/services", "label": "BSK"}, {"name": "WB Food & Supplies / Ration", "icon": "🍚", "cat": "West Bengal", "desc": "Digital ration card, e-Ration and ration services.", "url": "https://wbfss.wb.gov.in/food/", "label": "WB Food & Supplies"}, {"name": "Swasthya Sathi", "icon": "❤️", "cat": "West Bengal", "desc": "West Bengal health scheme information and services.", "url": "https://swasthyasathi.gov.in/", "label": "Swasthya Sathi"}, {"name": "Kanyashree", "icon": "👧", "cat": "West Bengal", "desc": "Official Kanyashree scheme portal.", "url": "https://kanyashree.wb.gov.in/", "label": "Kanyashree"}, {"name": "Rupashree", "icon": "💐", "cat": "West Bengal", "desc": "West Bengal Rupashree scheme information.", "url": "https://wcdsw.wb.gov.in/", "label": "WCDSW"}, {"name": "Student Credit Card", "icon": "🎓", "cat": "West Bengal", "desc": "West Bengal Student Credit Card scheme information.", "url": "https://wbsche.wb.gov.in/students-credit-card", "label": "Student Credit Card"}, {"name": "SVMCM Scholarship", "icon": "🏅", "cat": "West Bengal", "desc": "Swami Vivekananda Merit-cum-Means Scholarship portal.", "url": "https://svmcm.wb.gov.in/", "label": "SVMCM"}, {"name": "Banglarbhumi", "icon": "🌍", "cat": "West Bengal", "desc": "Land records and land-related citizen services.", "url": "https://banglarbhumi.gov.in/", "label": "Banglarbhumi"}, {"name": "Duare Sarkar", "icon": "🚪", "cat": "West Bengal", "desc": "West Bengal government camp/service information.", "url": "https://wb.gov.in/", "label": "WB Govt"}, {"name": "West Bengal Police", "icon": "👮", "cat": "West Bengal", "desc": "West Bengal Police official website.", "url": "https://wbpolice.gov.in/", "label": "WB Police"}, {"name": "WB Health", "icon": "🏥", "cat": "West Bengal", "desc": "West Bengal Health & Family Welfare information.", "url": "https://www.wbhealth.gov.in/", "label": "WB Health"}, {"name": "Aikyashree", "icon": "📖", "cat": "West Bengal", "desc": "West Bengal minority scholarship information.", "url": "https://dev.wbmdfcscholarship.gov.in/", "label": "Aikyashree"}, {"name": "Sikshashree", "icon": "📘", "cat": "West Bengal", "desc": "Scholarship support for eligible students.", "url": "https://bsk.wb.gov.in/services", "label": "BSK"}, {"name": "Jai Johar", "icon": "🌿", "cat": "West Bengal", "desc": "Tribal welfare scheme information via WB government channels.", "url": "https://wb.gov.in/", "label": "WB Govt"}, {"name": "Annapurna Bhandar", "icon": "🍚", "cat": "West Bengal", "desc": "West Bengal food/social-security related information portal.", "url": "https://socialsecurity.wb.gov.in/", "label": "Social Security WB"}, {"name": "Khadya Sathi", "icon": "🌾", "cat": "West Bengal", "desc": "Food security and ration scheme information.", "url": "https://food.wb.gov.in/", "label": "WB Food Dept"}, {"name": "WB RTPS / Citizen Services", "icon": "⏱️", "cat": "West Bengal", "desc": "Time-bound public service information and state services.", "url": "https://www.wb.gov.in/", "label": "WB Govt"}];
-const categories = [["Popular", "🔥", "लोकप्रिय सेवाएँ"], ["Central", "🇮🇳", "केंद्र सरकार"], ["West Bengal", "🏛️", "पश्चिम बंगाल"], ["Health", "🏥", "स्वास्थ्य"], ["Documents", "🪪", "दस्तावेज़"], ["Worker", "👷", "श्रमिक / नौकरी"], ["Pension", "👴", "पेंशन"], ["Education", "🎓", "शिक्षा / छात्रवृत्ति"], ["Farmer", "🌾", "किसान"], ["Banking", "🏦", "बैंकिंग / DBT"], ["Transport", "🚗", "यातायात"], ["Housing", "🏠", "आवास"]];
-let currentCat='All', currentScreen='home';
-let favs=JSON.parse(localStorage.getItem('krishV8Favs')||'[]');
-const $=id=>document.getElementById(id);
+const services=[
+["UMANG","📱","एक ही जगह कई सरकारी सेवाएँ","Citizen","https://web.umang.gov.in/"],
+["India.gov.in","🇮🇳","भारत सरकार का राष्ट्रीय पोर्टल","Citizen","https://www.india.gov.in/"],
+["myScheme","🧾","सरकारी योजनाएँ खोजें","Citizen","https://www.myscheme.gov.in/"],
+["ServicePlus","🛠️","ऑनलाइन सरकारी सेवाएँ","Citizen","https://serviceonline.gov.in/"],
+["DigiLocker","📂","डिजिटल दस्तावेज़ और प्रमाणपत्र","Citizen","https://www.digilocker.gov.in/"],
+["Aadhaar / UIDAI","🪪","आधार की ऑनलाइन सेवाएँ","Citizen","https://uidai.gov.in/"],
+["Income Tax","💰","आयकर की ऑनलाइन सेवाएँ","Finance","https://www.incometax.gov.in/"],
+["EPFO / UAN","🏦","PF, UAN और कर्मचारी सेवाएँ","Finance","https://www.epfindia.gov.in/"],
+["EPFO Passbook","📘","PF पासबुक देखें","Finance","https://passbook.epfindia.gov.in/"],
+["e-Shram","👷","असंगठित श्रमिक पंजीकरण","Employment","https://eshram.gov.in/"],
+["National Career Service","💼","नौकरी और रोजगार सेवाएँ","Employment","https://www.ncs.gov.in/"],
+["PM-JAY / Ayushman Bharat","🏥","स्वास्थ्य बीमा और लाभार्थी सेवाएँ","Health","https://pmjay.gov.in/"],
+["ABHA","❤️","डिजिटल हेल्थ ID सेवाएँ","Health","https://abha.abdm.gov.in/"],
+["NSAP Pension","👴","राष्ट्रीय सामाजिक सहायता पेंशन","Pension","https://nsap.nic.in/"],
+["Jeevan Pramaan","📱","पेंशनभोगियों का डिजिटल जीवन प्रमाण","Pension","https://jeevanpramaan.gov.in/"],
+["NPS","🏦","राष्ट्रीय पेंशन प्रणाली","Pension","https://enps.nsdl.com/"],
+["DBT Bharat","💳","Direct Benefit Transfer जानकारी","Finance","https://dbtbharat.gov.in/"],
+["PFMS","🧾","सरकारी भुगतान और वित्तीय जानकारी","Finance","https://pfms.nic.in/"],
+["PM Jan Dhan Yojana","🏦","जन-धन बैंकिंग सेवाएँ","Finance","https://pmjdy.gov.in/"],
+["PM-KISAN","🌾","किसान सम्मान निधि","Farmer","https://pmkisan.gov.in/"],
+["PM Kisan Maandhan","👨‍🌾","किसानों के लिए पेंशन योजना","Farmer","https://maandhan.in/"],
+["Kisan Credit Card","🌱","कृषि ऋण संबंधी जानकारी","Farmer","https://www.myscheme.gov.in/"],
+["PMAY-U","🏠","शहरी आवास योजना","Housing","https://pmay-urban.gov.in/"],
+["PMAY-G","🏡","ग्रामीण आवास योजना","Housing","https://pmayg.nic.in/"],
+["PM Ujjwala Yojana","🔥","LPG कनेक्शन योजना","Citizen","https://www.pmuy.gov.in/"],
+["MUDRA","💼","सूक्ष्म व्यवसाय ऋण जानकारी","Finance","https://www.mudra.org.in/"],
+["PM SVANidhi","🛒","स्ट्रीट वेंडर ऋण योजना","Finance","https://pmsvanidhi.mohua.gov.in/"],
+["National Scholarship Portal","🎓","छात्रवृत्ति आवेदन और जानकारी","Education","https://scholarships.gov.in/"],
+["SWAYAM","🎓","ऑनलाइन शिक्षा और पाठ्यक्रम","Education","https://swayam.gov.in/"],
+["Parivahan","🚗","वाहन और ड्राइविंग सेवाएँ","Transport","https://parivahan.gov.in/"],
+["e-Challan","🚦","ट्रैफिक चालान सेवाएँ","Transport","https://echallan.parivahan.gov.in/"],
+["Passport Seva","🛂","पासपोर्ट आवेदन और सेवाएँ","Citizen","https://www.passportindia.gov.in/"],
+["Voter Services","🗳️","मतदाता पंजीकरण और सेवाएँ","Citizen","https://voters.eci.gov.in/"],
+["CPGRAMS","📣","सरकारी शिकायत दर्ज करें","Citizen","https://pgportal.gov.in/"],
+["RTI Online","📄","ऑनलाइन RTI आवेदन","Citizen","https://rtionline.gov.in/"],
+["National Consumer Helpline","🛍️","उपभोक्ता शिकायत सहायता","Citizen","https://consumerhelpline.gov.in/"],
+["eCourts","⚖️","न्यायालय संबंधी ऑनलाइन सेवाएँ","Citizen","https://ecourts.gov.in/"],
+["Indian Railways","🚆","रेल यात्रा और टिकट सेवाएँ","Transport","https://www.irctc.co.in/"],
+["WB e-District","🏛️","पश्चिम बंगाल की ऑनलाइन नागरिक सेवाएँ","West Bengal","https://edistrict.wb.gov.in/"],
+["Bangla Sahayata Kendra","🏢","सरकारी सेवाओं की सहायता","West Bengal","https://bsk.wb.gov.in/"],
+["WB Food & Supplies","🍚","राशन और खाद्य आपूर्ति सेवाएँ","West Bengal","https://food.wb.gov.in/"],
+["Swasthya Sathi","❤️","पश्चिम बंगाल स्वास्थ्य योजना","West Bengal","https://swasthyasathi.gov.in/"],
+["Kanyashree","👧","बालिका कल्याण योजना","West Bengal","https://wbkanyashree.gov.in/"],
+["Rupashree","💍","विवाह सहायता योजना","West Bengal","https://wbrupashree.gov.in/"],
+["Student Credit Card","🎓","शिक्षा ऋण संबंधी सेवा","West Bengal","https://wbscc.wb.gov.in/"],
+["SVMCM Scholarship","🎓","स्वामी विवेकानंद छात्रवृत्ति","West Bengal","https://svmcm.wb.gov.in/"],
+["Banglarbhumi","🌾","भूमि और भू-अभिलेख सेवाएँ","West Bengal","https://banglarbhumi.gov.in/"],
+["Duare Sarkar","🚪","सरकारी सेवाओं की कैंप सेवा","West Bengal","https://ds.wb.gov.in/"],
+["WB Police","👮","पश्चिम बंगाल पुलिस सेवाएँ","West Bengal","https://wbpolice.gov.in/"],
+["WB Health","🏥","पश्चिम बंगाल स्वास्थ्य विभाग","West Bengal","https://www.wbhealth.gov.in/"],
+["Aikyashree","🎓","अल्पसंख्यक छात्रवृत्ति सेवाएँ","West Bengal","https://dev.wbmdfcscholarship.in/"],
+["Sikshashree","📚","छात्र सहायता योजना","West Bengal","https://oasis.gov.in/"],
+["Jai Johar","🌿","ST समुदाय के लिए योजना जानकारी","West Bengal","https://jaijohar.wb.gov.in/"],
+["Annapurna Bhandar","🛒","खाद्य एवं नागरिक आपूर्ति संबंधी जानकारी","West Bengal","https://food.wb.gov.in/"]
+].map((x,i)=>({id:i,name:x[0],icon:x[1],desc:x[2],cat:x[3],url:x[4]}));
+
+const catInfo=[
+["Popular","🔥","लोकप्रिय"],["Citizen","🏛️","नागरिक सेवाएँ"],["Finance","💰","वित्त"],["Health","❤️","स्वास्थ्य"],
+["Pension","👴","पेंशन"],["Employment","💼","रोजगार"],["Farmer","🌾","किसान"],["Education","🎓","शिक्षा"],
+["Housing","🏠","आवास"],["Transport","🚗","परिवहन"],["West Bengal","🌿","पश्चिम बंगाल"]
+];
+let currentScreen="home",currentCat="All";
+let favs=JSON.parse(localStorage.getItem("krishFavs")||"[]").filter(i=>services[i]);
+let rating=Number(localStorage.getItem("krishRating")||0);
+
 function go(screen){
-  currentScreen=screen; document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active')); $(screen).classList.add('active');
-  document.querySelectorAll('.bottom button').forEach(x=>x.classList.remove('on'));
-  const nav={home:'navHome',categories:'navCategories',favorites:'navFavorites'}[screen]; if(nav) $(nav).classList.add('on');
-  window.scrollTo({top:0,behavior:'smooth'});
-  if(screen==='categories')renderCategories(); if(screen==='favorites')renderFavorites(); if(screen==='services')renderServices();
+ currentScreen=screen;
+ document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));
+ document.getElementById(screen).classList.add("active");
+ document.querySelectorAll(".bottom button").forEach(x=>x.classList.remove("on"));
+ const nav={home:"navHome",services:"navServices",favorites:"navFavorites",about:"navAbout"}[screen];
+ if(nav)document.getElementById(nav).classList.add("on");
+ window.scrollTo({top:0,behavior:"smooth"});
+ if(screen==="services")renderServices();
+ if(screen==="favorites")renderFavorites();
+ if(screen==="about")renderRating();
 }
-function openCategory(cat){currentCat=cat;$('search').value='';go('services')}
+function card(s){
+ const on=favs.includes(s.id);
+ return `<div class="service"><button class="star ${on?"on":""}" onclick="toggleFav(${s.id},event)">${on?"★":"☆"}</button><div class="sicon">${s.icon}</div><div class="serviceMain"><h3>${s.name}</h3><p>${s.desc}</p></div><button class="go" onclick="openDetail(${s.id})">खोलें</button></div>`;
+}
 function renderCategories(){
-  $('categoryGrid').innerHTML=categories.map(([key,icon,title])=>{
-    const count=key==='Popular'?18:services.filter(s=>s.cat===key).length;
-    return `<button class="catCard" onclick="openCategory('${key}')"><div class="catIcon">${icon}</div><b>${title}</b><span>${count} सेवाएँ</span></button>`;
-  }).join('');
+ document.getElementById("categoryGrid").innerHTML=catInfo.map(c=>{
+  const n=c[0]==="Popular"?18:services.filter(s=>s.cat===c[0]).length;
+  return `<button class="catCard" onclick="openCategory('${c[0]}')"><div class="catIcon">${c[1]}</div><b>${c[2]}</b><span>${n} सेवाएँ</span></button>`;
+ }).join("");
 }
-function serviceCard(s){
- const idx=services.indexOf(s),on=favs.includes(idx);
- return `<div class="service"><button class="star ${on?'on':''}" onclick="toggleFav(${idx},event)">${on?'★':'☆'}</button><div class="sicon">${s.icon}</div><div class="serviceMain"><h3>${s.name}</h3><p>${s.desc}</p></div><button class="go" onclick="openDetail(${idx})">खोलें</button></div>`;
-}
+function openCategory(c){currentCat=c;go("services")}
 function renderServices(){
- $('serviceTitle').textContent=currentCat==='All'?'सभी सेवाएँ':(categories.find(c=>c[0]===currentCat)||['','',currentCat])[2];
- $('chips').innerHTML=`<button class="chip ${currentCat==='All'?'on':''}" onclick="currentCat='All';renderServices()">सभी</button>`+categories.map(c=>`<button class="chip ${currentCat===c[0]?'on':''}" onclick="currentCat='${c[0]}';renderServices()">${c[1]} ${c[2]}</button>`).join('');
- const q=$('search').value.toLowerCase().trim(); let arr=services.filter(s=>(currentCat==='All'||s.cat===currentCat));
- if(currentCat==='Popular')arr=services.slice(0,18);
- if(q)arr=services.filter(s=>(s.name+' '+s.cat+' '+s.desc+' '+s.label).toLowerCase().includes(q));
- $('serviceList').innerHTML=arr.map(serviceCard).join(''); $('serviceEmpty').style.display=arr.length?'none':'block';
+ const title=currentCat==="All"?"सभी सेवाएँ":(catInfo.find(c=>c[0]===currentCat)||["","",currentCat])[2];
+ document.getElementById("serviceTitle").textContent=title;
+ document.getElementById("chips").innerHTML=`<button class="chip ${currentCat==="All"?"on":""}" onclick="currentCat='All';renderServices()">सभी</button>`+catInfo.map(c=>`<button class="chip ${currentCat===c[0]?"on":""}" onclick="currentCat='${c[0]}';renderServices()">${c[1]} ${c[2]}</button>`).join("");
+ let arr=currentCat==="All"?services:(currentCat==="Popular"?services.slice(0,18):services.filter(s=>s.cat===currentCat));
+ document.getElementById("serviceList").innerHTML=arr.map(card).join("");
+ document.getElementById("serviceCount").textContent=arr.length+" सेवाएँ";
+ document.getElementById("serviceEmpty").style.display=arr.length?"none":"block";
 }
-function openDetail(idx){
- const s=services[idx],on=favs.includes(idx);
- $('detailContent').innerHTML=`<div class="detailIcon">${s.icon}</div><span class="cat">${s.cat}</span><h2>${s.name}</h2><p>${s.desc}</p>
- <div class="notice">🔐 यह बटन आपको संबंधित सरकारी/official portal पर ले जाएगा। OTP, password या payment details केवल official website पर ही भरें।</div>
- <a class="openBtn" href="${s.url}" target="_blank" rel="noopener">🌐 Official Website खोलें ↗</a>
- <button class="favBtn" onclick="toggleFav(${idx});openDetail(${idx})">${on?'★ पसंदीदा से हटाएँ':'☆ पसंदीदा में जोड़ें'}</button>`;
- go('detail');
+function openDetail(id){
+ const s=services[id],on=favs.includes(id);
+ document.getElementById("detailContent").innerHTML=`<div class="detailIcon">${s.icon}</div><div class="small">${s.cat}</div><h2>${s.name}</h2><p>${s.desc}</p><div class="notice">🔐 यह लिंक संबंधित सरकारी/official portal पर ले जाएगा। OTP, password या payment details केवल official website पर ही भरें।</div><a class="openBtn" href="${s.url}" target="_blank" rel="noopener">🌐 Official Website खोलें ↗</a><button class="favBtn" onclick="toggleFav(${id});openDetail(${id})">${on?"★ पसंदीदा से हटाएँ":"☆ पसंदीदा में जोड़ें"}</button>`;
+ go("detail");
 }
-function toggleFav(idx,e){if(e)e.stopPropagation();const p=favs.indexOf(idx);if(p>=0)favs.splice(p,1);else favs.push(idx);localStorage.setItem('krishV8Favs',JSON.stringify(favs));if(currentScreen==='favorites')renderFavorites();else if(currentScreen==='services')renderServices();}
-function renderFavorites(){const arr=favs.map(i=>services[i]).filter(Boolean);$('favList').innerHTML=arr.map(serviceCard).join('');$('favEmpty').style.display=arr.length?'none':'block';}
-function globalSearch(){const q=$('search').value.trim();if(q){currentCat='All';go('services');renderServices();}else if(currentScreen==='services')renderServices();}
-function showAbout(){alert('Krish App V8\n\nसरकारी योजनाओं और citizen services के official/public portals तक आसान पहुँच।\n\nयह किसी सरकारी विभाग की official app नहीं है।')}
-$('homePopular').innerHTML=services.slice(0,10).map(serviceCard).join('');renderCategories();$('totalCount').textContent=services.length+'+';
-if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+function toggleFav(id,e){if(e)e.stopPropagation();const p=favs.indexOf(id);if(p>=0)favs.splice(p,1);else favs.push(id);localStorage.setItem("krishFavs",JSON.stringify(favs));if(currentScreen==="favorites")renderFavorites();else if(currentScreen==="services")renderServices();}
+function renderFavorites(){const arr=favs.map(i=>services[i]).filter(Boolean);document.getElementById("favList").innerHTML=arr.map(card).join("");document.getElementById("favEmpty").style.display=arr.length?"none":"block";}
+function homeSearch(){const q=document.getElementById("homeSearch").value.toLowerCase().trim();if(!q){document.getElementById("homePopular").innerHTML=services.slice(0,10).map(card).join("");return}const arr=services.filter(s=>(s.name+" "+s.desc+" "+s.cat).toLowerCase().includes(q));document.getElementById("homePopular").innerHTML=arr.map(card).join("")||'<div class="empty" style="display:block">कोई सेवा नहीं मिली।</div>';}
+async function shareApp(){
+ const data={title:"Krish App",text:"सरकारी योजनाएँ, सरकारी वेबसाइटें और नागरिक सेवाएँ — Krish App",url:location.href};
+ try{if(navigator.share){await navigator.share(data)}else{await navigator.clipboard.writeText(location.href);alert("📋 ऐप का लिंक कॉपी हो गया। अब WhatsApp/Facebook पर शेयर कर सकते हैं।")}}catch(e){}
+}
+function showRating(){go("about");setTimeout(()=>document.getElementById("ratingStars").scrollIntoView({behavior:"smooth",block:"center"}),100)}
+function renderRating(){
+ document.getElementById("ratingStars").innerHTML=[1,2,3,4,5].map(n=>`<button class="rate ${rating>=n?"on":""}" onclick="setRating(${n})">${rating>=n?"★":"☆"}</button>`).join("");
+ document.getElementById("ratingText").textContent=rating?`आपकी ${rating}/5 रेटिंग सेव हो गई है। धन्यवाद!`:"अपनी पसंद की रेटिंग चुनें।";
+}
+function setRating(n){rating=n;localStorage.setItem("krishRating",String(n));renderRating()}
+document.getElementById("totalCount").textContent=services.length+"+";
+document.getElementById("homePopular").innerHTML=services.slice(0,10).map(card).join("");
+renderCategories();renderRating();
+if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
 </script>
 </body>
 </html>
