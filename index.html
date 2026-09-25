@@ -39,7 +39,7 @@ header{position:sticky;top:0;z-index:10;padding:14px 14px 12px;background:rgba(2
   <div class="brand">
     <img src="icon-192.png" alt="Krish App">
     <div><h1>Krish App</h1><p>सरकारी योजनाएँ • वेबसाइटें • नागरिक सेवाएँ</p></div>
-    <div class="actions"><button class="topbtn" onclick="shareApp()">↗️</button><button class="topbtn" onclick="showRating()">⭐</button></div>
+    <div class="actions"><button id="installTop" class="topbtn" onclick="installApp()" style="display:none">📲</button><button class="topbtn" onclick="shareApp()">↗️</button><button class="topbtn" onclick="showRating()">⭐</button></div>
   </div>
 </header>
 
@@ -47,7 +47,7 @@ header{position:sticky;top:0;z-index:10;padding:14px 14px 12px;background:rgba(2
 <section class="hero">
   <h2>सरकारी सेवाएँ, अब एक जगह</h2>
   <p>Krish App के माध्यम से सरकारी योजनाओं, आधिकारिक वेबसाइटों और नागरिक सेवाओं तक आसान पहुँच पाएँ। सही जानकारी के लिए हमेशा संबंधित सरकारी पोर्टल का उपयोग करें।</p>
-  <div class="heroBtns"><button onclick="shareApp()">📤 ऐप शेयर करें</button><button onclick="showRating()">⭐ रेटिंग दें</button></div>
+  <div class="heroBtns"><button id="installHero" onclick="installApp()" style="display:none">📲 ऐप इंस्टॉल करें</button><button onclick="shareApp()">📤 ऐप शेयर करें</button><button onclick="showRating()">⭐ रेटिंग दें</button></div>
 </section>
 <div class="search"><input id="homeSearch" placeholder="🔎 योजना, सेवा या वेबसाइट खोजें..." oninput="homeSearch()"></div>
 <section class="section"><div class="sectionHead"><h2>लोकप्रिय सेवाएँ</h2><span class="count" id="totalCount"></span></div><div id="homePopular"></div></section>
@@ -202,6 +202,28 @@ function setRating(n){rating=n;localStorage.setItem("krishRating",String(n));ren
 document.getElementById("totalCount").textContent=services.length+"+";
 document.getElementById("homePopular").innerHTML=services.slice(0,10).map(card).join("");
 renderCategories();renderRating();
+
+let deferredInstallPrompt=null;
+window.addEventListener("beforeinstallprompt",e=>{
+ e.preventDefault(); deferredInstallPrompt=e;
+ document.getElementById("installTop").style.display="block";
+ document.getElementById("installHero").style.display="block";
+});
+window.addEventListener("appinstalled",()=>{
+ deferredInstallPrompt=null;
+ document.getElementById("installTop").style.display="none";
+ document.getElementById("installHero").style.display="none";
+});
+async function installApp(){
+ if(deferredInstallPrompt){
+   deferredInstallPrompt.prompt();
+   await deferredInstallPrompt.userChoice;
+   deferredInstallPrompt=null;
+ }else{
+   alert("📲 Chrome ने अभी Install विकल्प उपलब्ध नहीं किया है। पेज को दोबारा खोलकर कुछ समय बाद फिर कोशिश करें।");
+ }
+}
+
 if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
 </script>
 </body>
