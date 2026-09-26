@@ -5,18 +5,11 @@
   "start_url": "/sarkari-app/",
   "scope": "/sarkari-app/",
   "display": "standalone",
-  "display_override": [
-    "window-controls-overlay",
-    "standalone",
-    "minimal-ui"
-  ],
   "orientation": "portrait",
   "background_color": "#edf7ff",
   "theme_color": "#0757b8",
-  "description": "सरकारी योजनाओं, आधिकारिक वेबसाइटों और नागरिक सेवाओं तक आसान पहुँच।",
+  "description": "सरकारी योजनाओं, सरकारी वेबसाइटों और नागरिक सेवाओं तक आसान पहुँच।",
   "lang": "hi",
-  "dir": "ltr",
-  "prefer_related_applications": false,
   "icons": [
     {
       "src": "/sarkari-app/icon-192.png",

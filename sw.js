@@ -1,40 +1,5 @@
-const CACHE_NAME="krish-app-v14";
-const ASSETS=[
-  "/sarkari-app/",
-  "/sarkari-app/index.html",
-  "/sarkari-app/manifest.webmanifest",
-  "/sarkari-app/icon-192.png",
-  "/sarkari-app/icon-512.png"
-];
-
-self.addEventListener("install",event=>{
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache=>cache.addAll(ASSETS))
-      .then(()=>self.skipWaiting())
-  );
-});
-
-self.addEventListener("activate",event=>{
-  event.waitUntil(
-    caches.keys()
-      .then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k))))
-      .then(()=>self.clients.claim())
-  );
-});
-
-self.addEventListener("fetch",event=>{
-  if(event.request.method!=="GET") return;
-  event.respondWith(
-    caches.match(event.request).then(cached=>{
-      if(cached) return cached;
-      return fetch(event.request).then(response=>{
-        if(response && response.status===200 && response.type!=="opaque"){
-          const copy=response.clone();
-          caches.open(CACHE_NAME).then(cache=>cache.put(event.request,copy));
-        }
-        return response;
-      }).catch(()=>caches.match("/sarkari-app/index.html"));
-    })
-  );
-});
+const CACHE_NAME="krish-app-v20";
+const ASSETS=["/sarkari-app/","/sarkari-app/index.html","/sarkari-app/manifest.webmanifest","/sarkari-app/icon-192.png","/sarkari-app/icon-512.png"];
+self.addEventListener("install",e=>e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
+self.addEventListener("activate",e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+self.addEventListener("fetch",e=>{if(e.request.method!=="GET")return;e.respondWith(caches.match(e.request).then(c=>c||fetch(e.request).then(r=>{if(r&&r.status===200&&r.type!=="opaque"){const cp=r.clone();caches.open(CACHE_NAME).then(x=>x.put(e.request,cp));}return r;}).catch(()=>caches.match("/sarkari-app/index.html"))))});
