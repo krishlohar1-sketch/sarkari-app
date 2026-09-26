@@ -4,32 +4,47 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0757b8">
-<meta name="description" content="सरकारी योजनाओं, सरकारी वेबसाइटों और नागरिक सेवाओं तक आसान पहुँच।">
+<meta name="description" content="Krish App — सरकारी योजनाओं, सरकारी वेबसाइटों और नागरिक सेवाओं तक आसान पहुँच।">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>Krish App – Sarkari Services</title>
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="manifest" href="/sarkari-app/manifest.webmanifest">
+<link rel="icon" href="/sarkari-app/icon-192.png" type="image/png">
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Devanagari",Arial,sans-serif;color:#10233f;
-background:linear-gradient(135deg,#eef7ff 0%,#f7f4ff 42%,#e9fff6 100%);min-height:100vh}
-button,input{font:inherit}.app{max-width:720px;margin:auto;min-height:100vh;padding-bottom:82px}
-header{position:sticky;top:0;z-index:10;padding:14px 14px 12px;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid #dbe7f5}
-.brand{display:flex;align-items:center;gap:10px}.brand img{width:48px;height:48px;border-radius:14px;box-shadow:0 5px 16px #0b4b8a22}
-.brand h1{font-size:21px;margin:0;color:#064a9e}.brand p{font-size:11px;margin:2px 0 0;color:#5c6d82}
-.actions{margin-left:auto;display:flex;gap:7px}.topbtn{border:0;background:#eaf3ff;color:#0757b8;border-radius:12px;padding:9px 10px;font-weight:700}
-.hero{margin:14px;border-radius:24px;padding:20px;background:linear-gradient(135deg,#0757b8,#1378d8 55%,#0c9d78);color:white;box-shadow:0 12px 30px #0757b83a}
-.hero h2{margin:0 0 8px;font-size:23px}.hero p{margin:0;line-height:1.55;font-size:14px;opacity:.96}.heroBtns{display:flex;gap:9px;margin-top:15px;flex-wrap:wrap}
-.heroBtns button{border:0;border-radius:12px;padding:10px 13px;font-weight:800;background:white;color:#0757b8}
-.search{margin:0 14px 14px;display:flex;gap:8px}.search input{width:100%;border:1px solid #d6e3f2;border-radius:15px;padding:13px 14px;outline:0;background:white;box-shadow:0 5px 18px #164f8b12}
-.section{padding:0 14px}.sectionHead{display:flex;align-items:center;justify-content:space-between;margin:15px 0 9px}.sectionHead h2{font-size:18px;margin:0}.count{font-size:12px;color:#61758d}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.catCard{border:1px solid #dbe7f5;background:rgba(255,255,255,.88);border-radius:17px;padding:14px;text-align:left;box-shadow:0 5px 18px #315a8b0d}.catIcon{font-size:25px}.catCard b{display:block;margin-top:5px;font-size:14px}.catCard span{display:block;font-size:11px;color:#718096;margin-top:3px}
-.service{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.94);border:1px solid #dbe7f5;border-radius:17px;padding:11px;margin-bottom:9px;box-shadow:0 5px 18px #315a8b0d}.sicon{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:24px;background:#eef6ff;flex:none}.serviceMain{min-width:0;flex:1}.serviceMain h3{font-size:14px;margin:0 0 3px}.serviceMain p{font-size:11px;color:#687a90;margin:0;line-height:1.35}.go{border:0;background:#0757b8;color:#fff;border-radius:10px;padding:8px 9px;font-size:12px;font-weight:800}.star{border:0;background:transparent;color:#9aa8b8;font-size:20px;padding:2px}.star.on{color:#f3a400}.chiprow{display:flex;gap:7px;overflow:auto;padding-bottom:9px}.chip{white-space:nowrap;border:1px solid #d4e2f2;background:#fff;border-radius:20px;padding:7px 10px;font-size:12px}.chip.on{background:#0757b8;color:#fff;border-color:#0757b8}
-.screen{display:none}.screen.active{display:block}.detail{margin:14px;background:#fff;border-radius:22px;padding:20px;box-shadow:0 8px 25px #315a8b15}.detailIcon{font-size:48px}.detail h2{margin:8px 0}.detail p{color:#60738b;line-height:1.55}.notice{background:#fff8df;border:1px solid #f1df9c;border-radius:13px;padding:11px;font-size:12px;line-height:1.5}.openBtn,.favBtn{display:block;text-align:center;text-decoration:none;border:0;width:100%;margin-top:12px;border-radius:13px;padding:12px;font-weight:800}.openBtn{background:#0757b8;color:white}.favBtn{background:#eaf3ff;color:#0757b8}
-.about{margin:14px;background:#fff;border-radius:22px;padding:20px;line-height:1.65;box-shadow:0 8px 25px #315a8b15}.rating{display:flex;gap:5px;margin:12px 0}.rate{border:0;background:#eef4fb;border-radius:10px;font-size:25px;padding:5px 8px}.rate.on{background:#fff1c9}.small{font-size:12px;color:#6c7d91}
-.bottom{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:min(720px,100%);display:grid;grid-template-columns:repeat(4,1fr);background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-top:1px solid #dbe7f5;padding:7px 8px calc(7px + env(safe-area-inset-bottom));z-index:20}.bottom button{border:0;background:transparent;color:#718096;font-size:11px;font-weight:700;padding:6px}.bottom button.on{color:#0757b8}.bottom span{display:block;font-size:20px;line-height:21px}
+:root{--blue:#0757b8;--deep:#073b7a;--green:#0b9b72;--ink:#10233f;--muted:#6b7d91;--line:#dbe7f5}
+body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Devanagari","Noto Sans",Arial,sans-serif;color:var(--ink);
+background:
+radial-gradient(circle at 8% 8%,rgba(27,130,255,.18),transparent 28%),
+radial-gradient(circle at 92% 12%,rgba(0,190,140,.15),transparent 25%),
+linear-gradient(135deg,#edf7ff 0%,#f7f3ff 46%,#edfff8 100%);min-height:100vh}
+button,input,select{font:inherit}.app{max-width:760px;margin:auto;min-height:100vh;padding-bottom:88px}
+header{position:sticky;top:0;z-index:50;padding:12px 13px;background:rgba(255,255,255,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(219,231,245,.85)}
+.brand{display:flex;align-items:center;gap:10px}.brand img{width:50px;height:50px;border-radius:15px;box-shadow:0 7px 20px rgba(7,87,184,.20)}
+.brand h1{font-size:21px;margin:0;color:var(--deep)}.brand p{font-size:11px;margin:2px 0 0;color:#66778a}
+.actions{margin-left:auto;display:flex;gap:6px}.topbtn{border:0;background:#eaf3ff;color:var(--blue);border-radius:12px;padding:9px 10px;font-weight:800;min-width:40px}
+.hero{position:relative;overflow:hidden;margin:14px;border-radius:26px;padding:22px;background:linear-gradient(135deg,#06479c 0%,#0875d1 52%,#0b9b72 100%);color:#fff;box-shadow:0 15px 35px rgba(7,87,184,.24)}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.10);animation:float 7s ease-in-out infinite}
+.hero:before{width:150px;height:150px;right:-50px;top:-65px}.hero:after{width:90px;height:90px;left:-35px;bottom:-35px;animation-delay:-2s}
+.hero>*{position:relative;z-index:1}.hero h2{margin:0 0 8px;font-size:24px}.hero p{margin:0;line-height:1.58;font-size:14px;opacity:.97}
+.heroBtns{display:flex;gap:9px;margin-top:16px;flex-wrap:wrap}.heroBtns button{border:0;border-radius:13px;padding:10px 13px;font-weight:850;background:#fff;color:var(--blue);box-shadow:0 5px 15px rgba(0,0,0,.10)}
+.installBanner{margin:0 14px 12px;border:1px solid #b9d8ff;background:rgba(255,255,255,.86);border-radius:18px;padding:12px;display:flex;align-items:center;gap:10px;box-shadow:0 7px 22px rgba(49,90,139,.08)}
+.installBanner .ibtext{flex:1}.installBanner b{display:block;font-size:14px}.installBanner span{font-size:11px;color:var(--muted)}
+.installBtn{border:0;border-radius:12px;background:var(--blue);color:#fff;padding:10px 12px;font-weight:850;white-space:nowrap}
+.search{margin:0 14px 14px;display:flex;gap:8px}.search input{width:100%;border:1px solid #d6e3f2;border-radius:15px;padding:13px 14px;outline:0;background:rgba(255,255,255,.94);box-shadow:0 6px 20px rgba(22,79,139,.08)}
+.section{padding:0 14px}.sectionHead{display:flex;align-items:center;justify-content:space-between;margin:16px 0 9px}.sectionHead h2{font-size:18px;margin:0}.count{font-size:12px;color:#61758d}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.catCard{border:1px solid var(--line);background:rgba(255,255,255,.86);border-radius:18px;padding:14px;text-align:left;box-shadow:0 7px 20px rgba(49,90,139,.07);animation:cardIn .5s both;transition:.2s}.catCard:active{transform:scale(.97)}.catIcon{font-size:25px}.catCard b{display:block;margin-top:5px;font-size:14px}.catCard span{display:block;font-size:11px;color:#718096;margin-top:3px}
+.service{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.91);border:1px solid var(--line);border-radius:18px;padding:11px;margin-bottom:9px;box-shadow:0 6px 20px rgba(49,90,139,.07);animation:cardIn .45s both;transition:.2s}.service:active{transform:translateY(1px) scale(.99)}.sicon{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:24px;background:linear-gradient(145deg,#eef6ff,#f2fff9);flex:none}.serviceMain{min-width:0;flex:1}.serviceMain h3{font-size:14px;margin:0 0 3px}.serviceMain p{font-size:11px;color:#687a90;margin:0;line-height:1.35}.go{border:0;background:var(--blue);color:#fff;border-radius:10px;padding:8px 9px;font-size:12px;font-weight:850}.star{border:0;background:transparent;color:#9aa8b8;font-size:20px;padding:2px}.star.on{color:#f3a400}
+.chiprow{display:flex;gap:7px;overflow:auto;padding-bottom:9px}.chip{white-space:nowrap;border:1px solid #d4e2f2;background:#fff;border-radius:20px;padding:7px 10px;font-size:12px}.chip.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.screen{display:none}.screen.active{display:block}.detail{margin:14px;background:rgba(255,255,255,.94);border-radius:23px;padding:20px;box-shadow:0 10px 28px rgba(49,90,139,.10)}.detailIcon{font-size:48px}.detail h2{margin:8px 0}.detail p{color:#60738b;line-height:1.55}.notice{background:#fff8df;border:1px solid #f1df9c;border-radius:13px;padding:11px;font-size:12px;line-height:1.5}.openBtn,.favBtn{display:block;text-align:center;text-decoration:none;border:0;width:100%;margin-top:12px;border-radius:13px;padding:12px;font-weight:800}.openBtn{background:var(--blue);color:white}.favBtn{background:#eaf3ff;color:var(--blue)}
+.about{margin:14px;background:rgba(255,255,255,.93);border-radius:23px;padding:20px;line-height:1.65;box-shadow:0 10px 28px rgba(49,90,139,.10)}.about p{color:#5e7188}.rating{display:flex;gap:5px;margin:12px 0}.rate{border:0;background:#eef4fb;border-radius:10px;font-size:25px;padding:5px 8px}.rate.on{background:#fff1c9}.small{font-size:12px;color:#6c7d91}
+.settingsRow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #edf1f6}.settingsRow:last-child{border-bottom:0}.settingsRow select{border:1px solid #ccdced;border-radius:10px;padding:8px;background:#fff}.softBtn{border:1px solid #d4e2f2;background:#f7fbff;color:var(--blue);border-radius:10px;padding:9px 11px;font-weight:750}
+.devFooter{margin:16px 14px 4px;text-align:center;color:#8b96a3;font-size:11px}.devFooter b{color:#6f7b88;font-weight:800}
+.bottom{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:min(760px,100%);display:grid;grid-template-columns:repeat(5,1fr);background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-top:1px solid #dbe7f5;padding:7px 8px calc(7px + env(safe-area-inset-bottom));z-index:60}.bottom button{border:0;background:transparent;color:#718096;font-size:10px;font-weight:750;padding:5px}.bottom button.on{color:var(--blue)}.bottom span{display:block;font-size:20px;line-height:21px}
 .empty{display:none;text-align:center;padding:30px;color:#73859a}
+.langTag{display:inline-block;background:#edf5ff;color:var(--blue);padding:4px 8px;border-radius:20px;font-size:11px;font-weight:800}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(12px)}}@keyframes cardIn{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
 @media(min-width:600px){.grid{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
@@ -37,21 +52,27 @@ header{position:sticky;top:0;z-index:10;padding:14px 14px 12px;background:rgba(2
 <div class="app">
 <header>
   <div class="brand">
-    <img src="icon-192.png" alt="Krish App">
-    <div><h1>Krish App</h1><p>सरकारी योजनाएँ • वेबसाइटें • नागरिक सेवाएँ</p></div>
-    <div class="actions"><button id="installTop" class="topbtn" onclick="installApp()" style="display:none">📲</button><button class="topbtn" onclick="shareApp()">↗️</button><button class="topbtn" onclick="showRating()">⭐</button></div>
+    <img src="/sarkari-app/icon-192.png" alt="Krish App">
+    <div><h1>Krish App</h1><p id="brandSub">सरकारी योजनाएँ • वेबसाइटें • नागरिक सेवाएँ</p></div>
+    <div class="actions"><button class="topbtn" onclick="installApp()">📲</button><button class="topbtn" onclick="shareApp()">↗️</button><button class="topbtn" onclick="showRating()">⭐</button></div>
   </div>
 </header>
 
 <main id="home" class="screen active">
 <section class="hero">
-  <h2>सरकारी सेवाएँ, अब एक जगह</h2>
-  <p>Krish App के माध्यम से सरकारी योजनाओं, आधिकारिक वेबसाइटों और नागरिक सेवाओं तक आसान पहुँच पाएँ। सही जानकारी के लिए हमेशा संबंधित सरकारी पोर्टल का उपयोग करें।</p>
-  <div class="heroBtns"><button id="installHero" onclick="installApp()" style="display:none">📲 ऐप इंस्टॉल करें</button><button onclick="shareApp()">📤 ऐप शेयर करें</button><button onclick="showRating()">⭐ रेटिंग दें</button></div>
+  <h2 id="heroTitle">सरकारी सेवाएँ, अब एक जगह</h2>
+  <p id="heroText">Krish App के माध्यम से सरकारी योजनाओं, आधिकारिक वेबसाइटों और नागरिक सेवाओं तक आसान पहुँच पाएँ। सही जानकारी के लिए संबंधित सरकारी पोर्टल का उपयोग करें।</p>
+  <div class="heroBtns"><button onclick="installApp()">📲 <span id="installText">ऐप इंस्टॉल करें</span></button><button onclick="shareApp()">📤 <span id="shareText">ऐप शेयर करें</span></button><button onclick="showRating()">⭐ <span id="rateText">रेटिंग दें</span></button></div>
 </section>
+
+<div class="installBanner">
+  <div class="ibtext"><b id="installBannerTitle">Krish App को मोबाइल में रखें</b><span id="installBannerText">लाइव वेबसाइट से सीधे ऐप इंस्टॉल करें।</span></div>
+  <button class="installBtn" onclick="installApp()" id="installBannerBtn">Install</button>
+</div>
+
 <div class="search"><input id="homeSearch" placeholder="🔎 योजना, सेवा या वेबसाइट खोजें..." oninput="homeSearch()"></div>
-<section class="section"><div class="sectionHead"><h2>लोकप्रिय सेवाएँ</h2><span class="count" id="totalCount"></span></div><div id="homePopular"></div></section>
-<section class="section"><div class="sectionHead"><h2>श्रेणियाँ</h2></div><div id="categoryGrid" class="grid"></div></section>
+<section class="section"><div class="sectionHead"><h2 id="popularTitle">लोकप्रिय सेवाएँ</h2><span class="count" id="totalCount"></span></div><div id="homePopular"></div></section>
+<section class="section"><div class="sectionHead"><h2 id="categoryTitle">श्रेणियाँ</h2></div><div id="categoryGrid" class="grid"></div></section>
 </main>
 
 <section id="services" class="screen">
@@ -59,27 +80,37 @@ header{position:sticky;top:0;z-index:10;padding:14px 14px 12px;background:rgba(2
 </section>
 
 <section id="favorites" class="screen">
-<div class="section" style="padding-top:14px"><div class="sectionHead"><h2>⭐ मेरी पसंदीदा सेवाएँ</h2></div><div id="favList"></div><div id="favEmpty" class="empty">अभी कोई पसंदीदा सेवा नहीं है।</div></div>
+<div class="section" style="padding-top:14px"><div class="sectionHead"><h2 id="favTitle">⭐ मेरी पसंदीदा सेवाएँ</h2></div><div id="favList"></div><div id="favEmpty" class="empty">अभी कोई पसंदीदा सेवा नहीं है।</div></div>
 </section>
 
 <section id="about" class="screen">
 <div class="about">
-<h2>ℹ️ Krish App के बारे में</h2>
-<p><b>Krish App</b> एक सरल नागरिक-सहायता ऐप है, जिसका उद्देश्य सरकारी योजनाओं, आधिकारिक वेबसाइटों और ऑनलाइन नागरिक सेवाओं तक पहुँच को आसान बनाना है।</p>
-<p>यह ऐप किसी सरकारी विभाग की आधिकारिक ऐप नहीं है। किसी भी आवेदन, OTP, पासवर्ड या भुगतान से पहले संबंधित सरकारी वेबसाइट का URL और जानकारी जरूर जाँचें।</p>
-<h3>⭐ ऐप को रेट करें</h3>
+<span class="langTag" id="aboutTag">Citizen App</span>
+<h2 id="aboutTitle">ℹ️ Krish App के बारे में</h2>
+<p id="aboutP1"><b>Krish App</b> एक सरल नागरिक-सहायता ऐप है, जिसका उद्देश्य सरकारी योजनाओं, आधिकारिक वेबसाइटों और ऑनलाइन नागरिक सेवाओं तक पहुँच को आसान बनाना है।</p>
+<p id="aboutP2">यह ऐप किसी सरकारी विभाग की आधिकारिक ऐप नहीं है। किसी भी आवेदन, OTP, पासवर्ड या भुगतान से पहले संबंधित सरकारी वेबसाइट का URL और जानकारी जरूर जाँचें।</p>
+<h3 id="ratingTitle">⭐ ऐप को रेट करें</h3>
 <div class="rating" id="ratingStars"></div><div class="small" id="ratingText">अपनी पसंद की रेटिंग चुनें।</div>
+
+<h3 id="settingsTitle">⚙️ सेटिंग</h3>
+<div class="settingsRow"><span id="languageLabel">🌐 भाषा</span><select id="languageSelect" onchange="setLanguage(this.value)"><option value="hi">हिन्दी</option><option value="en">English</option><option value="bn">বাংলা</option><option value="ne">नेपाली</option></select></div>
+<div class="settingsRow"><span id="installSetting">📲 ऐप इंस्टॉल करें</span><button class="softBtn" onclick="installApp()" id="installSettingBtn">Install</button></div>
+<div class="settingsRow"><span id="resetLabel">🧹 स्थानीय पसंद/रेटिंग हटाएँ</span><button class="softBtn" onclick="resetLocal()" id="resetBtn">Reset</button></div>
+
+<p class="small" id="aboutMore">Krish App में उपलब्ध लिंक संबंधित विभागों के पोर्टल तक पहुँचने में मदद करते हैं। सेवाओं की पात्रता, आवेदन की स्थिति और नियम हमेशा संबंधित सरकारी वेबसाइट से सत्यापित करें।</p>
 </div>
+<div class="devFooter">Developed by <b>ksh lohar</b> • Krish App</div>
 </section>
 
 <section id="detail" class="screen"><div class="detail" id="detailContent"></div></section>
 </div>
 
 <nav class="bottom">
-<button id="navHome" class="on" onclick="go('home')"><span>🏠</span>होम</button>
-<button id="navServices" onclick="go('services')"><span>📋</span>सेवाएँ</button>
-<button id="navFavorites" onclick="go('favorites')"><span>⭐</span>पसंदीदा</button>
-<button id="navAbout" onclick="go('about')"><span>ℹ️</span>जानकारी</button>
+<button id="navHome" class="on" onclick="go('home')"><span>🏠</span><span id="navHomeText">होम</span></button>
+<button id="navServices" onclick="go('services')"><span>📋</span><span id="navServicesText">सेवाएँ</span></button>
+<button id="navFavorites" onclick="go('favorites')"><span>⭐</span><span id="navFavText">पसंदीदा</span></button>
+<button id="navAbout" onclick="go('about')"><span>ℹ️</span><span id="navAboutText">जानकारी</span></button>
+<button id="navInstall" onclick="installApp()"><span>📲</span><span id="navInstallText">Install</span></button>
 </nav>
 
 <script>
@@ -149,6 +180,13 @@ let currentScreen="home",currentCat="All";
 let favs=JSON.parse(localStorage.getItem("krishFavs")||"[]").filter(i=>services[i]);
 let rating=Number(localStorage.getItem("krishRating")||0);
 
+const T={
+hi:{brandSub:"सरकारी योजनाएँ • वेबसाइटें • नागरिक सेवाएँ",heroTitle:"सरकारी सेवाएँ, अब एक जगह",heroText:"Krish App के माध्यम से सरकारी योजनाओं, आधिकारिक वेबसाइटों और नागरिक सेवाओं तक आसान पहुँच पाएँ। सही जानकारी के लिए संबंधित सरकारी पोर्टल का उपयोग करें।",install:"ऐप इंस्टॉल करें",share:"ऐप शेयर करें",rate:"रेटिंग दें",installTitle:"Krish App को मोबाइल में रखें",installText:"लाइव वेबसाइट से सीधे ऐप इंस्टॉल करें।",popular:"लोकप्रिय सेवाएँ",categories:"श्रेणियाँ",fav:"⭐ मेरी पसंदीदा सेवाएँ",about:"ℹ️ Krish App के बारे में",aboutP1:"Krish App एक सरल नागरिक-सहायता ऐप है, जिसका उद्देश्य सरकारी योजनाओं, आधिकारिक वेबसाइटों और ऑनलाइन नागरिक सेवाओं तक पहुँच को आसान बनाना है।",aboutP2:"यह ऐप किसी सरकारी विभाग की आधिकारिक ऐप नहीं है। किसी भी आवेदन, OTP, पासवर्ड या भुगतान से पहले संबंधित सरकारी वेबसाइट का URL और जानकारी जरूर जाँचें।",rating:"⭐ ऐप को रेट करें",settings:"⚙️ सेटिंग",language:"🌐 भाषा",installSetting:"📲 ऐप इंस्टॉल करें",reset:"🧹 स्थानीय पसंद/रेटिंग हटाएँ",resetBtn:"Reset",navHome:"होम",navServices:"सेवाएँ",navFav:"पसंदीदा",navAbout:"जानकारी",navInstall:"Install"},
+en:{brandSub:"Schemes • Websites • Citizen Services",heroTitle:"Government services in one place",heroText:"Use Krish App for quick access to government schemes, official websites and citizen services. Verify important information on the relevant government portal.",install:"Install App",share:"Share App",rate:"Rate App",installTitle:"Keep Krish App on your phone",installText:"Install the app directly from this live website.",popular:"Popular Services",categories:"Categories",fav:"⭐ My Favourite Services",about:"ℹ️ About Krish App",aboutP1:"Krish App is a simple citizen-help app designed to make government schemes, official websites and online citizen services easier to access.",aboutP2:"This is not an official government app. Before any application, OTP, password or payment, verify the official government website and details.",rating:"⭐ Rate the App",settings:"⚙️ Settings",language:"🌐 Language",installSetting:"📲 Install App",reset:"🧹 Clear local favourites/rating",resetBtn:"Reset",navHome:"Home",navServices:"Services",navFav:"Favourites",navAbout:"Info",navInstall:"Install"},
+bn:{brandSub:"সরকারি প্রকল্প • ওয়েবসাইট • নাগরিক পরিষেবা",heroTitle:"সরকারি পরিষেবা, এক জায়গায়",heroText:"সরকারি প্রকল্প, অফিসিয়াল ওয়েবসাইট ও নাগরিক পরিষেবায় সহজে পৌঁছাতে Krish App ব্যবহার করুন। গুরুত্বপূর্ণ তথ্য সংশ্লিষ্ট সরকারি পোর্টালে যাচাই করুন।",install:"অ্যাপ ইনস্টল",share:"অ্যাপ শেয়ার",rate:"রেটিং দিন",installTitle:"মোবাইলে Krish App রাখুন",installText:"এই লাইভ ওয়েবসাইট থেকেই অ্যাপ ইনস্টল করুন।",popular:"জনপ্রিয় পরিষেবা",categories:"বিভাগ",fav:"⭐ পছন্দের পরিষেবা",about:"ℹ️ Krish App সম্পর্কে",aboutP1:"Krish App একটি সহজ নাগরিক সহায়তা অ্যাপ, যা সরকারি প্রকল্প, অফিসিয়াল ওয়েবসাইট এবং অনলাইন নাগরিক পরিষেবায় পৌঁছানো সহজ করে।",aboutP2:"এটি কোনো সরকারি বিভাগের অফিসিয়াল অ্যাপ নয়। আবেদন, OTP, পাসওয়ার্ড বা পেমেন্টের আগে অফিসিয়াল সরকারি ওয়েবসাইট যাচাই করুন।",rating:"⭐ অ্যাপ রেটিং",settings:"⚙️ সেটিংস",language:"🌐 ভাষা",installSetting:"📲 অ্যাপ ইনস্টল",reset:"🧹 পছন্দ/রেটিং মুছুন",resetBtn:"Reset",navHome:"হোম",navServices:"পরিষেবা",navFav:"পছন্দ",navAbout:"তথ্য",navInstall:"Install"},
+ne:{brandSub:"सरकारी योजना • वेबसाइट • नागरिक सेवा",heroTitle:"सरकारी सेवाहरू, एकै ठाउँमा",heroText:"सरकारी योजना, आधिकारिक वेबसाइट र नागरिक सेवामा सजिलो पहुँचका लागि Krish App प्रयोग गर्नुहोस्। महत्त्वपूर्ण जानकारी सम्बन्धित सरकारी पोर्टलमा जाँच गर्नुहोस्।",install:"एप इन्स्टल",share:"एप शेयर",rate:"रेटिङ",installTitle:"मोबाइलमा Krish App राख्नुहोस्",installText:"यही लाइभ वेबसाइटबाट एप इन्स्टल गर्नुहोस्।",popular:"लोकप्रिय सेवाहरू",categories:"श्रेणीहरू",fav:"⭐ मनपर्ने सेवाहरू",about:"ℹ️ Krish App बारे",aboutP1:"Krish App सरकारी योजना, आधिकारिक वेबसाइट र अनलाइन नागरिक सेवामा सजिलो पहुँचका लागि बनाइएको सरल नागरिक-सहायता एप हो।",aboutP2:"यो कुनै सरकारी विभागको आधिकारिक एप होइन। आवेदन, OTP, पासवर्ड वा भुक्तानी अघि आधिकारिक वेबसाइट जाँच गर्नुहोस्।",rating:"⭐ एपलाई रेट गर्नुहोस्",settings:"⚙️ सेटिङ",language:"🌐 भाषा",installSetting:"📲 एप इन्स्टल",reset:"🧹 मनपर्ने/रेटिङ हटाउनुहोस्",resetBtn:"Reset",navHome:"होम",navServices:"सेवाहरू",navFav:"मनपर्ने",navAbout:"जानकारी",navInstall:"Install"}
+};
+
 function go(screen){
  currentScreen=screen;
  document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));
@@ -157,74 +195,70 @@ function go(screen){
  const nav={home:"navHome",services:"navServices",favorites:"navFavorites",about:"navAbout"}[screen];
  if(nav)document.getElementById(nav).classList.add("on");
  window.scrollTo({top:0,behavior:"smooth"});
- if(screen==="services")renderServices();
- if(screen==="favorites")renderFavorites();
- if(screen==="about")renderRating();
+ if(screen==="services")renderServices(); if(screen==="favorites")renderFavorites(); if(screen==="about")renderRating();
 }
 function card(s){
  const on=favs.includes(s.id);
  return `<div class="service"><button class="star ${on?"on":""}" onclick="toggleFav(${s.id},event)">${on?"★":"☆"}</button><div class="sicon">${s.icon}</div><div class="serviceMain"><h3>${s.name}</h3><p>${s.desc}</p></div><button class="go" onclick="openDetail(${s.id})">खोलें</button></div>`;
 }
-function renderCategories(){
- document.getElementById("categoryGrid").innerHTML=catInfo.map(c=>{
-  const n=c[0]==="Popular"?18:services.filter(s=>s.cat===c[0]).length;
-  return `<button class="catCard" onclick="openCategory('${c[0]}')"><div class="catIcon">${c[1]}</div><b>${c[2]}</b><span>${n} सेवाएँ</span></button>`;
- }).join("");
-}
+function renderCategories(){document.getElementById("categoryGrid").innerHTML=catInfo.map(c=>{const n=c[0]==="Popular"?18:services.filter(s=>s.cat===c[0]).length;return `<button class="catCard" onclick="openCategory('${c[0]}')"><div class="catIcon">${c[1]}</div><b>${c[2]}</b><span>${n} सेवाएँ</span></button>`}).join("")}
 function openCategory(c){currentCat=c;go("services")}
 function renderServices(){
  const title=currentCat==="All"?"सभी सेवाएँ":(catInfo.find(c=>c[0]===currentCat)||["","",currentCat])[2];
  document.getElementById("serviceTitle").textContent=title;
  document.getElementById("chips").innerHTML=`<button class="chip ${currentCat==="All"?"on":""}" onclick="currentCat='All';renderServices()">सभी</button>`+catInfo.map(c=>`<button class="chip ${currentCat===c[0]?"on":""}" onclick="currentCat='${c[0]}';renderServices()">${c[1]} ${c[2]}</button>`).join("");
  let arr=currentCat==="All"?services:(currentCat==="Popular"?services.slice(0,18):services.filter(s=>s.cat===currentCat));
- document.getElementById("serviceList").innerHTML=arr.map(card).join("");
- document.getElementById("serviceCount").textContent=arr.length+" सेवाएँ";
- document.getElementById("serviceEmpty").style.display=arr.length?"none":"block";
+ document.getElementById("serviceList").innerHTML=arr.map(card).join("");document.getElementById("serviceCount").textContent=arr.length+" सेवाएँ";document.getElementById("serviceEmpty").style.display=arr.length?"none":"block";
 }
-function openDetail(id){
- const s=services[id],on=favs.includes(id);
- document.getElementById("detailContent").innerHTML=`<div class="detailIcon">${s.icon}</div><div class="small">${s.cat}</div><h2>${s.name}</h2><p>${s.desc}</p><div class="notice">🔐 यह लिंक संबंधित सरकारी/official portal पर ले जाएगा। OTP, password या payment details केवल official website पर ही भरें।</div><a class="openBtn" href="${s.url}" target="_blank" rel="noopener">🌐 Official Website खोलें ↗</a><button class="favBtn" onclick="toggleFav(${id});openDetail(${id})">${on?"★ पसंदीदा से हटाएँ":"☆ पसंदीदा में जोड़ें"}</button>`;
- go("detail");
-}
-function toggleFav(id,e){if(e)e.stopPropagation();const p=favs.indexOf(id);if(p>=0)favs.splice(p,1);else favs.push(id);localStorage.setItem("krishFavs",JSON.stringify(favs));if(currentScreen==="favorites")renderFavorites();else if(currentScreen==="services")renderServices();}
-function renderFavorites(){const arr=favs.map(i=>services[i]).filter(Boolean);document.getElementById("favList").innerHTML=arr.map(card).join("");document.getElementById("favEmpty").style.display=arr.length?"none":"block";}
-function homeSearch(){const q=document.getElementById("homeSearch").value.toLowerCase().trim();if(!q){document.getElementById("homePopular").innerHTML=services.slice(0,10).map(card).join("");return}const arr=services.filter(s=>(s.name+" "+s.desc+" "+s.cat).toLowerCase().includes(q));document.getElementById("homePopular").innerHTML=arr.map(card).join("")||'<div class="empty" style="display:block">कोई सेवा नहीं मिली।</div>';}
-async function shareApp(){
- const data={title:"Krish App",text:"सरकारी योजनाएँ, सरकारी वेबसाइटें और नागरिक सेवाएँ — Krish App",url:location.href};
- try{if(navigator.share){await navigator.share(data)}else{await navigator.clipboard.writeText(location.href);alert("📋 ऐप का लिंक कॉपी हो गया। अब WhatsApp/Facebook पर शेयर कर सकते हैं।")}}catch(e){}
-}
-function showRating(){go("about");setTimeout(()=>document.getElementById("ratingStars").scrollIntoView({behavior:"smooth",block:"center"}),100)}
-function renderRating(){
- document.getElementById("ratingStars").innerHTML=[1,2,3,4,5].map(n=>`<button class="rate ${rating>=n?"on":""}" onclick="setRating(${n})">${rating>=n?"★":"☆"}</button>`).join("");
- document.getElementById("ratingText").textContent=rating?`आपकी ${rating}/5 रेटिंग सेव हो गई है। धन्यवाद!`:"अपनी पसंद की रेटिंग चुनें।";
-}
+function openDetail(id){const s=services[id],on=favs.includes(id);document.getElementById("detailContent").innerHTML=`<div class="detailIcon">${s.icon}</div><div class="small">${s.cat}</div><h2>${s.name}</h2><p>${s.desc}</p><div class="notice">🔐 यह लिंक संबंधित सरकारी/official portal पर ले जाएगा। OTP, password या payment details केवल official website पर ही भरें।</div><a class="openBtn" href="${s.url}" target="_blank" rel="noopener">🌐 Official Website खोलें ↗</a><button class="favBtn" onclick="toggleFav(${id});openDetail(${id})">${on?"★ पसंदीदा से हटाएँ":"☆ पसंदीदा में जोड़ें"}</button>`;go("detail")}
+function toggleFav(id,e){if(e)e.stopPropagation();const p=favs.indexOf(id);if(p>=0)favs.splice(p,1);else favs.push(id);localStorage.setItem("krishFavs",JSON.stringify(favs));if(currentScreen==="favorites")renderFavorites();else if(currentScreen==="services")renderServices()}
+function renderFavorites(){const arr=favs.map(i=>services[i]).filter(Boolean);document.getElementById("favList").innerHTML=arr.map(card).join("");document.getElementById("favEmpty").style.display=arr.length?"none":"block"}
+function homeSearch(){const q=document.getElementById("homeSearch").value.toLowerCase().trim();if(!q){document.getElementById("homePopular").innerHTML=services.slice(0,10).map(card).join("");return}const arr=services.filter(s=>(s.name+" "+s.desc+" "+s.cat).toLowerCase().includes(q));document.getElementById("homePopular").innerHTML=arr.map(card).join("")||'<div class="empty" style="display:block">कोई सेवा नहीं मिली।</div>'}
+async function shareApp(){const data={title:"Krish App",text:"सरकारी योजनाएँ, सरकारी वेबसाइटें और नागरिक सेवाएँ — Krish App",url:location.href};try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(location.href);alert("📋 ऐप का लिंक कॉपी हो गया।")}}catch(e){}}
+function showRating(){go("about");setTimeout(()=>document.getElementById("ratingStars").scrollIntoView({behavior:"smooth",block:"center"}),120)}
+function renderRating(){document.getElementById("ratingStars").innerHTML=[1,2,3,4,5].map(n=>`<button class="rate ${rating>=n?"on":""}" onclick="setRating(${n})">${rating>=n?"★":"☆"}</button>`).join("");document.getElementById("ratingText").textContent=rating?`आपकी ${rating}/5 रेटिंग सेव हो गई है। धन्यवाद!`:"अपनी पसंद की रेटिंग चुनें।"}
 function setRating(n){rating=n;localStorage.setItem("krishRating",String(n));renderRating()}
+function resetLocal(){if(confirm("स्थानीय favourites और rating हटाएँ?")){localStorage.removeItem("krishFavs");localStorage.removeItem("krishRating");favs=[];rating=0;renderRating();renderFavorites();alert("Reset हो गया।")}}
+
+let lang=localStorage.getItem("krishLang")||"hi";
+function setLanguage(l){lang=l;localStorage.setItem("krishLang",l);applyLanguage()}
+function applyLanguage(){
+ const t=T[lang]||T.hi;
+ document.documentElement.lang=lang;
+ const map={brandSub:"brandSub",heroTitle:"heroTitle",heroText:"heroText",install:"installText",share:"shareText",rate:"rateText",installTitle:"installBannerTitle",installText:"installBannerText",popular:"popularTitle",categories:"categoryTitle",fav:"favTitle",about:"aboutTitle",aboutP1:"aboutP1",aboutP2:"aboutP2",rating:"ratingTitle",settings:"settingsTitle",language:"languageLabel",installSetting:"installSetting",reset:"resetLabel",resetBtn:"resetBtn",navHome:"navHomeText",navServices:"navServicesText",navFav:"navFavText",navAbout:"navAboutText",navInstall:"navInstallText"};
+ Object.keys(map).forEach(k=>{const el=document.getElementById(map[k]);if(el)el.textContent=t[k]||el.textContent});
+ document.getElementById("installBannerBtn").textContent=lang==="hi"?"Install":lang==="bn"?"ইনস্টল":lang==="ne"?"Install":"Install";
+ document.getElementById("installSettingBtn").textContent=lang==="hi"?"Install":"Install";
+ document.getElementById("homeSearch").placeholder=lang==="en"?"🔎 Search scheme, service or website...":"🔎 योजना, सेवा या वेबसाइट खोजें...";
+}
 document.getElementById("totalCount").textContent=services.length+"+";
 document.getElementById("homePopular").innerHTML=services.slice(0,10).map(card).join("");
-renderCategories();renderRating();
+renderCategories();renderRating();applyLanguage();
 
 let deferredInstallPrompt=null;
-window.addEventListener("beforeinstallprompt",e=>{
- e.preventDefault(); deferredInstallPrompt=e;
- document.getElementById("installTop").style.display="block";
- document.getElementById("installHero").style.display="block";
-});
-window.addEventListener("appinstalled",()=>{
- deferredInstallPrompt=null;
- document.getElementById("installTop").style.display="none";
- document.getElementById("installHero").style.display="none";
-});
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredInstallPrompt=e;});
+window.addEventListener("appinstalled",()=>{deferredInstallPrompt=null;alert("✅ Krish App सफलतापूर्वक install हो गया।")});
+
 async function installApp(){
  if(deferredInstallPrompt){
    deferredInstallPrompt.prompt();
-   await deferredInstallPrompt.userChoice;
+   const result=await deferredInstallPrompt.userChoice;
    deferredInstallPrompt=null;
- }else{
-   alert("📲 Chrome ने अभी Install विकल्प उपलब्ध नहीं किया है। पेज को दोबारा खोलकर कुछ समय बाद फिर कोशिश करें।");
+   return;
  }
+ alert(lang==="en"
+   ?"Chrome has not provided the install prompt yet. Open Chrome menu ⋮ and choose 'Add to Home screen' when available."
+   :"Chrome ने अभी direct install prompt उपलब्ध नहीं किया है। Chrome के ⋮ मेन्यू में 'Add to Home screen' विकल्प उपलब्ध होने पर उसे चुनें।");
 }
 
-if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+if("serviceWorker" in navigator){
+ window.addEventListener("load",async()=>{
+   try{
+     const reg=await navigator.serviceWorker.register("/sarkari-app/sw.js",{scope:"/sarkari-app/"});
+     reg.update();
+   }catch(e){}
+ });
+}
 </script>
 </body>
 </html>
