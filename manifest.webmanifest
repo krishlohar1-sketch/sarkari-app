@@ -1,5 +1,5 @@
 {
-  "name": "Krish App – Sarkari Services",
+  "name": "Krish App – Government Services",
   "short_name": "Krish App",
   "id": "/sarkari-app/",
   "start_url": "/sarkari-app/",
@@ -8,8 +8,8 @@
   "orientation": "portrait",
   "background_color": "#edf7ff",
   "theme_color": "#0757b8",
-  "description": "सरकारी योजनाओं, सरकारी वेबसाइटों और नागरिक सेवाओं तक आसान पहुँच।",
-  "lang": "hi",
+  "description": "Government schemes, official portals and citizen services in one place.",
+  "lang": "en",
   "icons": [
     {
       "src": "/sarkari-app/icon-192.png",
