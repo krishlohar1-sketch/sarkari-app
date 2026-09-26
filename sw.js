@@ -1,4 +1,4 @@
-const CACHE_NAME="krish-app-v13";
+const CACHE_NAME="krish-app-v14";
 const ASSETS=[
   "/sarkari-app/",
   "/sarkari-app/index.html",
