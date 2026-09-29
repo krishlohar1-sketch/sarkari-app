@@ -6,7 +6,7 @@
   "scope":"/sarkari-app/",
   "display":"standalone",
   "orientation":"portrait",
-  "background_color":"#edf7ff",
+  "background_color":"#071f4d",
   "theme_color":"#0757b8",
   "description":"Government schemes, official portals and citizen services in one place.",
   "lang":"en",
