@@ -1,8 +1,5 @@
-KRISH APP INSTALL UPDATE
+Krish App update
 
-📲 PWA Install button added.
-📤 Share + ⭐ Rating retained.
-🎨 Smart background retained.
-📝 Hindi description retained.
-
-GitHub main branch के root में सभी 6 files replace करें.
+This package contains 166 service shortcuts.
+Languages: Hindi, English, Bangla, Nepali, Sadri (Jharkhand), Assamese.
+Features: modern glass cards, search, direct portal links, compact hero banner, rating, PWA install support.
