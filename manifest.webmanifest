@@ -1,15 +1,26 @@
 {
-  "name": "Krish App – Government Services",
+  "name": "Krish App V9 – Government Services",
   "short_name": "Krish App",
   "id": "/sarkari-app/",
   "start_url": "/sarkari-app/",
   "scope": "/sarkari-app/",
   "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
   "orientation": "portrait",
-  "background_color": "#071f4d",
-  "theme_color": "#0757b8",
-  "description": "Government schemes, official portals and citizen services in one place.",
+  "background_color": "#073b7a",
+  "theme_color": "#073b7a",
+  "description": "160+ official government services, schemes and citizen portals.",
   "lang": "en",
+  "categories": [
+    "government",
+    "utilities",
+    "education"
+  ],
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "/sarkari-app/icon-192.png",

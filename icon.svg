@@ -1,11 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#062e66"/><stop offset=".55" stop-color="#0a67c5"/><stop offset="1" stop-color="#0b9a68"/></linearGradient><linearGradient id="shine" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e8f4ff"/></linearGradient></defs>
-<rect width="512" height="512" rx="116" fill="url(#bg)"/><circle cx="410" cy="98" r="42" fill="#ffffff18"/>
-<rect x="48" y="48" width="416" height="416" rx="92" fill="url(#shine)"/>
-<path d="M132 118h58v110l116-110h80L255 249l139 145h-82L190 286v108h-58z" fill="#073b7a"/>
-<path d="M337 112c18 0 33 15 33 33s-15 33-33 33-33-15-33-33 15-33 33-33z" fill="#0b9a68"/>
-<path d="M322 145h30M337 130v30" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
-<rect x="116" y="414" width="280" height="2" rx="1" fill="#0b9a6844"/>
-<text x="256" y="444" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="900" letter-spacing="2" fill="#16243a">KRISH APP</text>
-<text x="256" y="470" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#0b66c3">CITIZEN SERVICES</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#073b7a"/><stop offset=".55" stop-color="#0b67bd"/><stop offset="1" stop-color="#0b8a6f"/></linearGradient></defs><rect width="512" height="512" rx="100" fill="url(#g)"/><circle cx="256" cy="190" r="104" fill="#fff" opacity=".12"/><path d="M116 286h280v34H116zM140 336h232v26H140zM170 230h172l-86-72z" fill="#fff"/><path d="M154 382h204v34H154z" fill="#fff"/><text x="256" y="465" text-anchor="middle" font-family="Arial,sans-serif" font-size="52" font-weight="800" fill="#fff">KRISH</text></svg>
