@@ -4,7 +4,7 @@
   "start_url": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#06122b",
+  "background_color": "#071a3d",
   "theme_color": "#071a3d",
   "description": "Krish App brings 201 government websites and citizen services together in one compact mobile-friendly app.",
   "icons": [
